@@ -1,0 +1,16 @@
+name: Harmful or unnecessary advice
+description: Report guidance that made a valid Go implementation worse
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Task, code, agent/model, skill version, and the advice
+    validations:
+      required: true
+  - type: textarea
+    id: consequence
+    attributes:
+      label: Why the advice is wrong here
+      description: Describe the behavior or API that should remain valid.
+    validations:
+      required: true

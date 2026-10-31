@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.1",
+  "name": "log-summary-cli",
+  "context": {
+    "scaffold_script": "place-files.sh"
+  },
+  "kind": "cli",
+  "expected_outcome": "A practical CLI with deterministic results and defined partial-failure behavior.",
+  "checks": [
+    {
+      "id": "aggregation",
+      "test": "TestTastyAggregation",
+      "rule": "GO-DATA-CONTRACT"
+    },
+    {
+      "id": "invalid-records",
+      "test": "TestTastyInvalidRecords",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "long-record",
+      "test": "TestTastyLongRecord",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "empty-directory",
+      "test": "TestTastyEmptyDirectory",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "argument-errors",
+      "test": "TestTastyArgumentErrors",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "unreadable-entry",
+      "test": "TestTastyUnreadableEntry",
+      "rule": "GO-CAUSE"
+    }
+  ]
+}

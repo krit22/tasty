@@ -1,0 +1,16 @@
+[
+  {
+    "name": "metadata-changes-precedence",
+    "file": "semver.go",
+    "before": "for i := range a.core {",
+    "after": "if a.build != b.build { return 1 }; for i := range a.core {",
+    "check": "build-metadata"
+  },
+  {
+    "name": "numeric-prerelease-compared-lexically",
+    "file": "semver.go",
+    "before": "if nx && ny && len(x) != len(y) {",
+    "after": "if false && nx && ny && len(x) != len(y) {",
+    "check": "large-prerelease"
+  }
+]

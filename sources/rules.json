@@ -1,0 +1,173 @@
+[
+  {
+    "id": "GO-SIMPLE",
+    "sources": [
+      "effective-go",
+      "review-comments",
+      "google-guide"
+    ],
+    "reason": "Avoid abstractions without a consumer need",
+    "exceptions": "Existing abstractions or actual substitution needs can justify interfaces and generics",
+    "verification": [
+      "rubric",
+      "behavior-tests"
+    ]
+  },
+  {
+    "id": "GO-API",
+    "sources": [
+      "effective-go",
+      "google-decisions"
+    ],
+    "reason": "Keep APIs clear and compatible",
+    "exceptions": "A zero value may be unusable when validation or dependencies are essential",
+    "verification": [
+      "rubric",
+      "external-api-tests"
+    ]
+  },
+  {
+    "id": "GO-DATA",
+    "sources": [
+      "effective-go",
+      "json"
+    ],
+    "reason": "Use encapsulation where invariants need it",
+    "exceptions": "Exported record and serialization fields can be appropriate",
+    "verification": [
+      "external-api-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-OPTIONS",
+    "sources": [
+      "google-practices"
+    ],
+    "reason": "Make argument meaning clear",
+    "exceptions": "Clear bools and established signatures may remain",
+    "verification": [
+      "external-api-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-ERROR",
+    "sources": [
+      "uber-guide",
+      "io"
+    ],
+    "reason": "Return expected failures without losing the result",
+    "exceptions": "Panics can represent programming defects; some concrete operations cannot fail",
+    "verification": [
+      "behavior-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-CAUSE",
+    "sources": [
+      "errors",
+      "error-wrapping"
+    ],
+    "reason": "Retain semantic error information promised to callers",
+    "exceptions": "Hiding a lower-level cause can be an intentional API boundary",
+    "verification": [
+      "errors-is-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-CLEANUP",
+    "sources": [
+      "uber-guide",
+      "io",
+      "http"
+    ],
+    "reason": "Release owned resources on all relevant paths",
+    "exceptions": "Do not close caller-owned resources without an ownership contract",
+    "verification": [
+      "behavior-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-CONTEXT",
+    "sources": [
+      "context",
+      "review-comments"
+    ],
+    "reason": "Make cancellation reach the actual request-scoped work",
+    "exceptions": "Independent background work needs an explicitly owned separate lifetime",
+    "verification": [
+      "cancellation-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-LIFETIME",
+    "sources": [
+      "uber-guide",
+      "pipelines"
+    ],
+    "reason": "Give background work termination and completion ownership",
+    "exceptions": "Long-lived work is valid when an application owns and joins it",
+    "verification": [
+      "lifecycle-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-SYNC",
+    "sources": [
+      "sync",
+      "race"
+    ],
+    "reason": "Prevent unsafe sharing and copying synchronization state",
+    "exceptions": "A passing race run only covers executed behavior",
+    "verification": [
+      "race-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-DATA-CONTRACT",
+    "sources": [
+      "json",
+      "spec",
+      "uber-guide"
+    ],
+    "reason": "Preserve observable absence, ordering, and aliasing",
+    "exceptions": "A requested semantic change can deliberately revise the contract",
+    "verification": [
+      "behavior-tests",
+      "rubric"
+    ]
+  },
+  {
+    "id": "GO-NUMBERS",
+    "sources": [
+      "spec",
+      "json"
+    ],
+    "reason": "Validate numeric bounds required by the contract",
+    "exceptions": "Not all arithmetic needs overflow checking; ordinary counters may have sufficient bounds",
+    "verification": [
+      "boundary-tests"
+    ]
+  },
+  {
+    "id": "GO-TEST",
+    "sources": [
+      "tests",
+      "testing",
+      "race"
+    ],
+    "reason": "Verify observable success and failure behavior",
+    "exceptions": "Table tests and a particular assertion framework are choices, not universal requirements",
+    "verification": [
+      "behavior-tests",
+      "rubric"
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.1",
+  "name": "semver-library-api",
+  "context": {
+    "scaffold_script": "place-files.sh"
+  },
+  "kind": "library",
+  "expected_outcome": "A small SemVer package with tested precedence, bounded core parsing, and useful documentation.",
+  "checks": [
+    {
+      "id": "round-trip",
+      "test": "TestTastyRoundTrip",
+      "rule": "GO-DATA-CONTRACT"
+    },
+    {
+      "id": "invalid-input",
+      "test": "TestTastyInvalidInput",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "core-overflow",
+      "test": "TestTastyCoreOverflow",
+      "rule": "GO-NUMBERS"
+    },
+    {
+      "id": "precedence",
+      "test": "TestTastyPrecedence",
+      "rule": "GO-DATA-CONTRACT"
+    },
+    {
+      "id": "build-metadata",
+      "test": "TestTastyBuildMetadata",
+      "rule": "GO-DATA-CONTRACT"
+    },
+    {
+      "id": "large-prerelease",
+      "test": "TestTastyLongPrereleaseNumbers",
+      "rule": "GO-NUMBERS"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "id": "effective-go",
+    "url": "https://go.dev/doc/effective_go",
+    "sections": "Names; Interfaces; Embedding; Initialization",
+    "reviewed": "2026-10-31",
+    "context": "Older core-language guidance; not a modules or generics reference"
+  },
+  {
+    "id": "review-comments",
+    "url": "https://go.dev/wiki/CodeReviewComments",
+    "sections": "Contexts; Interfaces; Synchronous Functions",
+    "reviewed": "2026-10-31",
+    "context": "Review conventions; retain contextual exceptions"
+  },
+  {
+    "id": "google-guide",
+    "url": "https://google.github.io/styleguide/go/guide",
+    "sections": "Style principles; Simplicity; Consistency",
+    "reviewed": "2026-10-31",
+    "context": "Google-specific conventions are contextual"
+  },
+  {
+    "id": "google-decisions",
+    "url": "https://google.github.io/styleguide/go/decisions",
+    "sections": "Interfaces; Errors; Package names",
+    "reviewed": "2026-10-31",
+    "context": "Subordinate to the core guide"
+  },
+  {
+    "id": "google-practices",
+    "url": "https://google.github.io/styleguide/go/best-practices",
+    "sections": "Naming; Function arguments; Testing",
+    "reviewed": "2026-10-31",
+    "context": "Explicitly contextual guidance"
+  },
+  {
+    "id": "uber-guide",
+    "url": "https://github.com/uber-go/guide/blob/master/style.md",
+    "sections": "Errors; Defer to Clean Up; Goroutines; Copy Slices and Maps",
+    "reviewed": "2026-10-31",
+    "context": "Do not universalize company-specific library choices"
+  },
+  {
+    "id": "errors",
+    "url": "https://pkg.go.dev/errors",
+    "sections": "Is; As; error trees",
+    "reviewed": "2026-10-31",
+    "context": "Check availability against the project Go version"
+  },
+  {
+    "id": "error-wrapping",
+    "url": "https://go.dev/blog/go1.13-errors",
+    "sections": "Whether to Wrap",
+    "reviewed": "2026-10-31",
+    "context": "Wrapping exposes a cause as an API decision"
+  },
+  {
+    "id": "context",
+    "url": "https://pkg.go.dev/context",
+    "sections": "Package overview; WithCancel; WithTimeout",
+    "reviewed": "2026-10-31",
+    "context": "Request propagation and cancellation ownership"
+  },
+  {
+    "id": "http",
+    "url": "https://pkg.go.dev/net/http",
+    "sections": "Client.Do; Response.Body; Client reuse",
+    "reviewed": "2026-10-31",
+    "context": "Interpret actual API and status contracts"
+  },
+  {
+    "id": "sync",
+    "url": "https://pkg.go.dev/sync",
+    "sections": "Mutex; WaitGroup",
+    "reviewed": "2026-10-31",
+    "context": "Synchronization primitives have copying constraints"
+  },
+  {
+    "id": "pipelines",
+    "url": "https://go.dev/blog/pipelines",
+    "sections": "Stopping short; Explicit cancellation",
+    "reviewed": "2026-10-31",
+    "context": "Use current APIs while retaining lifecycle reasoning"
+  },
+  {
+    "id": "json",
+    "url": "https://pkg.go.dev/encoding/json",
+    "sections": "Marshal; Unmarshal; Decoder.UseNumber",
+    "reviewed": "2026-10-31",
+    "context": "Wire representations and number precision are observable"
+  },
+  {
+    "id": "io",
+    "url": "https://pkg.go.dev/io",
+    "sections": "Reader; Writer; Closer",
+    "reviewed": "2026-10-31",
+    "context": "Partial operations and resource ownership"
+  },
+  {
+    "id": "spec",
+    "url": "https://go.dev/ref/spec",
+    "sections": "Conversions; Integer overflow; Slice types; Map types",
+    "reviewed": "2026-10-31",
+    "context": "Authoritative language behavior"
+  },
+  {
+    "id": "tests",
+    "url": "https://go.dev/wiki/TestComments",
+    "sections": "Test Error Semantics; Compare Stable Results",
+    "reviewed": "2026-10-31",
+    "context": "Do not replace a project test framework for style"
+  },
+  {
+    "id": "testing",
+    "url": "https://pkg.go.dev/testing",
+    "sections": "Examples; TempDir; Cleanup",
+    "reviewed": "2026-10-31",
+    "context": "Executable evidence and deterministic fixtures"
+  },
+  {
+    "id": "race",
+    "url": "https://go.dev/doc/articles/race_detector",
+    "sections": "Usage; How To Use",
+    "reviewed": "2026-10-31",
+    "context": "Dynamic checking only covers executed paths"
+  },
+  {
+    "id": "semver",
+    "url": "https://semver.org/spec/v2.0.0.html",
+    "sections": "Items 2, 9, 10, 11",
+    "reviewed": "2026-10-31",
+    "context": "Evaluation contract; uint64 core bounds are task-specific"
+  }
+]

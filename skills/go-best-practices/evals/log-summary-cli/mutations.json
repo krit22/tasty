@@ -1,0 +1,16 @@
+[
+  {
+    "name": "scanner-default-limit",
+    "file": "main.go",
+    "before": "scanner.Buffer(make([]byte, 4096), 2*1024*1024)",
+    "after": "// Deliberately keep the scanner default limit.",
+    "check": "long-record"
+  },
+  {
+    "name": "silenced-partial-failure",
+    "file": "main.go",
+    "before": "status = 1",
+    "after": "status = 0",
+    "check": "unreadable-entry"
+  }
+]

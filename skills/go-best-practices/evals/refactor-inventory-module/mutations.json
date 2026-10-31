@@ -1,0 +1,16 @@
+[
+  {
+    "name": "lost-file-error-cause",
+    "file": "inventory.go",
+    "before": "fmt.Errorf(\"load %s: %w\", path, err)",
+    "after": "fmt.Errorf(\"load %s: %v\", path, err)",
+    "check": "file-error"
+  },
+  {
+    "name": "missing-quantity-overflow-check",
+    "file": "inventory.go",
+    "before": "if amount > math.MaxInt64-v.Quantity {",
+    "after": "if false && amount > math.MaxInt64-v.Quantity {",
+    "check": "overflow"
+  }
+]

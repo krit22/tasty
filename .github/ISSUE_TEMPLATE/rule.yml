@@ -1,0 +1,22 @@
+name: Propose a rule
+description: Show an agent failure and the published guidance that addresses it
+body:
+  - type: textarea
+    id: failure
+    attributes:
+      label: What did the agent get wrong?
+      description: Include the task, a minimal example, and the concrete consequence.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Published source and section
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Proposed guidance, exceptions, and how to evaluate it
+    validations:
+      required: true

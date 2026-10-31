@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.1",
+  "name": "refactor-inventory-module",
+  "context": {
+    "scaffold_script": "place-files.sh"
+  },
+  "kind": "library",
+  "expected_outcome": "A compatible refactor fixing expected failures, preserving exported plain data and the bool API, and documenting changes.",
+  "checks": [
+    {
+      "id": "existing-api",
+      "test": "TestTastyExistingAPI",
+      "rule": "GO-API"
+    },
+    {
+      "id": "missing-name",
+      "test": "TestTastyMissingName",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "file-error",
+      "test": "TestTastyFileError",
+      "rule": "GO-CAUSE"
+    },
+    {
+      "id": "numeric-error",
+      "test": "TestTastyNumericError",
+      "rule": "GO-ERROR"
+    },
+    {
+      "id": "overflow",
+      "test": "TestTastyOverflow",
+      "rule": "GO-NUMBERS"
+    },
+    {
+      "id": "report-order",
+      "test": "TestTastyDeterministicReport",
+      "rule": "GO-DATA-CONTRACT"
+    },
+    {
+      "id": "validation",
+      "test": "TestTastyPreservedValidation",
+      "rule": "GO-DATA-CONTRACT"
+    }
+  ]
+}
