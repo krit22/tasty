@@ -39,3 +39,7 @@ jobs:
           cache: false
       - run: python3 scripts/examples.py
       - run: python3 scripts/evaluate.py prove
+      - run: go test ./...
+        working-directory: examples/forward-options
+      - run: go vet ./...
+        working-directory: examples/forward-options

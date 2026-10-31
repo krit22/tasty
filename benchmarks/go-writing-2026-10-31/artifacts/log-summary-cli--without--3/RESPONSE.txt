@@ -1,0 +1,5 @@
+Implemented `logsum` with validation, sorted counts, 1 MiB record support, and continued processing after unreadable entries.
+
+Tests cover invalid records, empty directories, argument errors, large records, and unreadable entries. `go test ./...` and `go vet ./...` pass.
+
+Run with `go run . DIRECTORY`.

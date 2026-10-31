@@ -7,7 +7,7 @@ are original Tasty material; BeautifulRust is the methodological reference.
 
 | Stage | Acceptance evidence | Status |
 | --- | --- | --- |
-| Go writing alpha | Sourced skill; three frozen cases; executable checks; recorded baseline | In progress |
+| Go writing alpha | Sourced skill; three frozen cases; executable checks; recorded baseline | Complete: 18 runs; both conditions 57/57 behavioral checks |
 | Revision from observed failures | Narrow changes tied to actual outcomes, followed by a new recorded comparison | Pending evidence |
 | Go review | Correct prioritized findings; clean controls; locations and cited sources | Planned |
 | Enforcement preset | Every advertised diagnostic demonstrated by a failing fixture and clean counterexample | Planned |
@@ -20,6 +20,12 @@ The initial baseline has three tasks, two conditions, and three repetitions: 18 
 Record automated behavior separately from qualitative rubrics. Explicit loading and
 natural discovery are separate experiments. A stronger model or easy tasks can leave
 little headroom; equal scores are evidence of no demonstrated benefit on those checks.
+
+That ceiling occurred in the first comparison. Preserve these results. Before adding
+rules, investigate realistic review, cancellation, resource ownership, and concurrency
+tasks where ordinary agent output actually fails. Freeze a new suite separately rather
+than changing this suite to manufacture a favorable comparison. The current alpha is
+an installable experiment, not a claim of proven improvement.
 
 For a later stable claim, predeclare a target of at least 20% fewer failed substantive
 assertions overall, improvement in both tested agent configurations, no reduction in

@@ -1,0 +1,8 @@
+Refactored the package while preserving exported APIs, `Report(verbose bool)`, Item fields, and JSON shape.
+
+- Reports now sort by item name.
+- File and numeric failures return errors.
+- Missing items and overflow preserve sentinel compatibility through `errors.Is`.
+- Added regression tests and documented retained behavior in `CHANGES.md`.
+
+Validation passed: `go test ./...` and `go vet ./...`.

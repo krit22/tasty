@@ -1,0 +1,20 @@
+{
+  "run-01": "refactor-inventory-module--without--3",
+  "run-02": "refactor-inventory-module--without--1",
+  "run-03": "log-summary-cli--without--1",
+  "run-04": "semver-library-api--with--1",
+  "run-05": "refactor-inventory-module--with--1",
+  "run-06": "semver-library-api--with--2",
+  "run-07": "log-summary-cli--without--2",
+  "run-08": "refactor-inventory-module--without--2",
+  "run-09": "refactor-inventory-module--with--3",
+  "run-10": "log-summary-cli--without--3",
+  "run-11": "refactor-inventory-module--with--2",
+  "run-12": "log-summary-cli--with--2",
+  "run-13": "log-summary-cli--with--1",
+  "run-14": "semver-library-api--without--2",
+  "run-15": "semver-library-api--without--3",
+  "run-16": "semver-library-api--with--3",
+  "run-17": "log-summary-cli--with--3",
+  "run-18": "semver-library-api--without--1"
+}

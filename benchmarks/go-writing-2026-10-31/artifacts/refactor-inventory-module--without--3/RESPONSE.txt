@@ -1,0 +1,7 @@
+Refactored the package while preserving its exported API, Item JSON shape, and valid-input behavior.
+
+- Reports sort deterministically by item name.
+- File, numeric, missing-item, and overflow failures return errors with `errors.Is` compatibility.
+- Added regression tests and documented changes and retained behavior in `CHANGES.md`.
+
+Validation passed: `go test ./...` and `go vet ./...`.

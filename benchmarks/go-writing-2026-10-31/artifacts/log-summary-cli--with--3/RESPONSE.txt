@@ -1,0 +1,10 @@
+Implemented `logsum` in `main.go` with validation, deterministic ordering, 1 MiB record support, and continued processing after unreadable entries.
+
+Tests cover invalid records, large lines, ordering, argument errors, and I/O failures. Tests, `go vet`, build, and smoke test passed.
+
+Build and run:
+
+```sh
+go build -buildvcs=false -o logsum .
+./logsum DIRECTORY
+```

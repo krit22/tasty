@@ -268,7 +268,7 @@ def main():
         if not args.out:
             parser.error('summarize requires --out pointing at a run directory')
         data = summarize(args.out)
-    print(json.dumps(data, indent=2))
+    print(json.dumps(data.get('totals', data), indent=2))
     return 0
 
 

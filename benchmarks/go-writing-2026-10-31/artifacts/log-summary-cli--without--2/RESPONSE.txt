@@ -1,0 +1,12 @@
+Implemented `logsum` with validation, sorting, skipped counts, large-record support, and continued processing after read errors. Added tests and README.
+
+Verified with `go test ./...`, `go vet ./...`, and a CLI smoke test.
+
+Build in this workspace with:
+
+```sh
+go build -buildvcs=false -o logsum .
+./logsum /path/to/logs
+```
+
+The build flag bypasses unavailable Git metadata.

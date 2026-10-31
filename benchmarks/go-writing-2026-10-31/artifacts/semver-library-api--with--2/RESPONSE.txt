@@ -1,0 +1,3 @@
+Implemented the dependency-free `semver` package in [semver.go](semver.go) with documented APIs, strict parsing, uint64 overflow checks, arbitrary-length numeric prerelease comparison, and metadata-preserving formatting.
+
+[Tests](semver_test.go) include usage examples and fuzzing. All checks passed: `go test`, `go vet`, and a short fuzz run. Statement coverage is 100%.

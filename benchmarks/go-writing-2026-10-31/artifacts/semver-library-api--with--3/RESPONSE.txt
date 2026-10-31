@@ -1,0 +1,5 @@
+Implemented in [semver.go](semver.go), with strict parsing, uint64 overflow checks, unlimited numeric prerelease identifiers, and SemVer 2.0.0 comparison.
+
+Added API documentation, a runnable example, and [tests](semver_test.go).
+
+Validation passed: `go test ./...`, `go vet ./...`, and 15,243 fuzz executions.

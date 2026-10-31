@@ -1,0 +1,5 @@
+Implemented the dependency-free `semver` package with `Parse`, `Version.String`, and `Compare`, plus API documentation and examples.
+
+Handles uint64 overflow, arbitrarily long numeric prerelease identifiers, and SemVer 2.0.0 precedence.
+
+Validation passed: tests with 100% statement coverage, `go vet`, and over 63,000 fuzz executions.

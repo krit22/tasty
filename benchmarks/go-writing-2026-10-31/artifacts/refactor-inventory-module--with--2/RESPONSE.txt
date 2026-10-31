@@ -1,0 +1,7 @@
+Refactored the package while preserving its exported API and JSON shape.
+
+- Reports sort deterministically by item name.
+- File, numeric, missing-item, and overflow failures return inspectable errors.
+- Added regression tests and documented retained behavior in [CHANGES.md](CHANGES.md).
+
+Validation passed: `go test ./...` and `go vet ./...` using the supplied Go toolchain.

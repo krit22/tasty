@@ -1,0 +1,5 @@
+Implemented the dependency-free `semver` package in `semver.go`, with API documentation and tests.
+
+Supports strict parsing, `uint64` core overflow checks, arbitrarily long numeric prerelease identifiers, and SemVer 2.0.0 precedence that ignores build metadata.
+
+Validation passed: `go test ./...`, `go vet ./...`, and a brief fuzz run with over 61,000 executions.

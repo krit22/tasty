@@ -26,6 +26,10 @@ Copy that folder into your agent's supported skill directory. For agents that su
 the shared project location, that is `.agents/skills/go-best-practices/`; use your
 host's own location where required. Restart or refresh skills if the host requires it.
 
+Git-based installation also copies the maintainer evaluation files. The release ZIP
+is the smaller payload and excludes those fixtures; the skill does not route agents
+to the evaluation material.
+
 Ask your agent to use `go-best-practices` when implementing or refactoring Go. For example:
 
 > Use go-best-practices to refactor this package. Preserve its public API and explain
@@ -72,9 +76,17 @@ There are 19 automated behavioral checks per complete three-task run. Qualitativ
 Markdown rubrics cover API design, meaningful candidate tests, and documentation;
 they are reported separately and are not automatically counted as passed.
 
-The first with/without comparison is being recorded. Until that evidence is published,
-there is no measured improvement claim. A passing fixture suite validates the harness,
-not the effectiveness of the skill. See [ROADMAP.md](ROADMAP.md) for the evidence gates.
+The [first comparison](benchmarks/go-writing-2026-10-31/README.md) completed 18 fresh
+Codex CLI tasks: three cases, two conditions, three repetitions. Both conditions passed
+57/57 automated behavioral checks. **This suite demonstrates no behavioral improvement
+from the skill on the tested configuration.** The tasks appear too easy for this runner
+to distinguish the conditions. This result does not assess every design recommendation,
+other models, or automatic discovery. A separate blinded review also tied at 24/27
+qualitative rubric checks per condition; it found missing API-contract documentation
+in every inventory refactor.
+
+A passing fixture suite validates the harness, not the effectiveness of the skill.
+See [ROADMAP.md](ROADMAP.md) for the evidence gates and next experiments.
 
 ## Reproduce the local checks
 

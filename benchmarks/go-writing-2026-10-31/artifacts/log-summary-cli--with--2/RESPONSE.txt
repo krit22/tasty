@@ -1,0 +1,5 @@
+Implemented dependency-free `logsum` with deterministic sorting, strict record validation, 1 MiB record support, and path-specific file errors that allow processing to continue.
+
+Tests pass, including large records and unreadable entries. `go vet ./...` also passes.
+
+Build with `go build -o logsum .`, then run `./logsum DIRECTORY`.

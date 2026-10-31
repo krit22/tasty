@@ -1,0 +1,9 @@
+Implemented dependency-free `logsum` with validation, deterministic sorting, 1 MiB record support, and continued processing after file errors.
+
+Tests, `go vet`, build, and executable smoke test passed. Build required disabling VCS stamping.
+
+Run with:
+
+```sh
+go run -buildvcs=false . DIRECTORY
+```

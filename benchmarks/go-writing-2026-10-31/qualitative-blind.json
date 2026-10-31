@@ -1,0 +1,365 @@
+{
+  "grading_scope": "qualitative rubric review by one model; not behavioral scores",
+  "runs": [
+    {
+      "id": "run-01",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/inventory.go:17 preserves Item fields and JSON tags; :25, :27, :38, :43, :59, :78, and :118 expose the inventory operations including Report(verbose bool), using only standard-library imports at :3. No speculative API layer is added."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/inventory_test.go:28 tests deterministic reports in both modes; :51 checks multiplication/addition/restock overflow and unchanged state; :85 tests validation, missing names, replacement, repeated names and JSON shape; :122 tests file/numeric failures and preserved error causes."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "candidate/inventory.go:13, :17, :23, :25, :27, :38, :43, :59, :78, and :118 have no exported API documentation, leaving replacement, repeated-name totals, overflow and load-error contracts unexplained at the API. candidate/CHANGES.md:6 and :11 do explain fixes and retained compatibility, and candidate/RESPONSE.txt:7 lists test/vet checks, but these do not satisfy the exported-documentation assertion."
+        }
+      ]
+    },
+    {
+      "id": "run-02",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/inventory.go:19 retains Item fields/tags; :28, :31, :42, :47, :64, :84 and :123 keep the requested inventory entrypoints including Report(verbose bool). The imports at :3 are standard library and the implementation introduces no speculative interfaces/builders/dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/inventory_test.go:28 asserts sorted report formatting; :50 exercises total-value boundaries, overflow, duplicates and missing items; :80 asserts mutation validation and unchanged state; :122 checks load file/syntax/range failures and numeric error causes; :168 checks JSON compatibility."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "candidate/inventory.go:47 leaves Restock entirely undocumented; :63 documents duplicate totals but omits TotalValue's missing-name/overflow and zero-on-error contract; :83 documents Load's input shape but not error behavior. Thus non-obvious API errors are not explained. candidate/CHANGES.md:5 and :11 describe fixes and deliberately retained behavior, and candidate/RESPONSE.txt:6 reports test/vet checks, satisfying those portions only."
+        }
+      ]
+    },
+    {
+      "id": "run-03",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/main.go:15 keeps main as the process boundary and :17 uses a small private run function with standard io.Writer seams; :29 filters directory entries and :55 implements the specified ordering. Imports at :3 and candidate/go.mod:1 show a dependency-free CLI without speculative public abstractions."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/main_test.go:18 asserts aggregate output, tie ordering and filtering; :34 rejects malformed/wrong-type/missing-field records; :43 exercises exactly 1 MiB records with several endings; :55 and :62 test empty/argument failures; :73 verifies path diagnostics, nonzero status and continued processing after an unreadable entry."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/main.go:15 and :17 expose only the command and private implementation functions, so there is no exported library API requiring documentation. candidate/RESPONSE.txt:1 describes the key CLI behaviors, :3 states go test ./... and go vet ./... pass, and :5 gives an invocation. The refactor-specific CHANGES.md clause does not apply to this new CLI."
+        }
+      ]
+    },
+    {
+      "id": "run-04",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/semver.go:15 defines Version and :24, :95, :110 provide exactly the requested Parse, value-receiver String, and Compare entrypoints. Imports at :6 are standard library; private validation helpers at :59 and :71 avoid speculative public API or dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/semver_test.go:11 checks parsing/string round trips and uint64 maxima; :29 rejects syntax and all three core-overflow positions; :58 tests precedence in both directions, unbounded numeric identifiers and ignored build metadata; :81 gives a checked executable example. These assert externally observable behavior and failures."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/semver.go:1 documents strict input, :12 explains zero value and precedence equality, :21 explains uint64 limits, unbounded prerelease numbers and zero-on-error, :93 documents round trips, and :106 explains Compare and ignored metadata. candidate/RESPONSE.txt:5 states test, vet and brief fuzz checks actually completed. This is a new library, so CHANGES.md is not required."
+        }
+      ]
+    },
+    {
+      "id": "run-05",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/inventory.go:17 retains the Item shape and tags; :25, :27, :38, :43, :59, :78 and :116 retain the inventory operations and Report(verbose bool). Imports at :3 are standard library, and numericError at :108 is a focused private helper rather than an added public abstraction."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/inventory_test.go:28 checks both report formats, replacement, repeated-name totals, missing names, validation and JSON; :75 tests restock/product/sum overflow and the unchanged item after failure; :109 tests missing files, numeric syntax/range causes, invalid fields, compatible loading and empty files."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "candidate/inventory.go:27, :43, :59, :78 and :116 have no exported API comments, so replacement, missing-name/error/overflow behavior, load format and deterministic report ordering are not documented at the API. The sole explanatory comment at :107 is on a private helper. candidate/CHANGES.md:5 and :10 cover fixes/retained compatibility and candidate/RESPONSE.txt:8 reports test/vet checks, but exported contracts remain missing."
+        }
+      ]
+    },
+    {
+      "id": "run-06",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/semver.go:16 defines Version and :24, :85 and :99 provide the requested signatures directly. The only imports at :6 are fmt/strconv/strings and validation helpers at :53 and :65 remain private; there are no speculative interfaces, builders or dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/semver_test.go:11 tests valid round trips and large prerelease numbers; :30 tests invalid syntax plus overflow of each core component and zero-on-error; :61 checks precedence in both directions including huge numeric identifiers; :89 verifies metadata equality and the zero value; :104 is an executable usage example."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/semver.go:1 documents strict syntax; :12 documents the zero value and == versus precedence; :21 explains parse errors and size limits; :83 explains complete formatting; :96 documents Compare's result and metadata rule. candidate/RESPONSE.txt:3 reports test, vet and fuzz checks passed. The CHANGES.md requirement is conditional on refactors and does not apply here."
+        }
+      ]
+    },
+    {
+      "id": "run-07",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/main.go:16 delegates process exit to a private run at :18; private readFile at :64 and recordLevel at :97 separate file reading and record validation without a new public API. Imports at :4 are all standard library and candidate/go.mod:1 contains no dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/main_test.go:18 checks output ordering, counts, CRLF/final-line handling and filtering; :36 exercises invalid/missing/null fields and valid extras; :57 tests exactly 1 MiB records; :72 and :79 cover empty/invalid directory arguments; :90 checks unreadable-entry diagnostics and continued processing."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/main.go:1 identifies the command; :16, :18, :64 and :97 define no exported library API, so exported-contract documentation is not applicable. candidate/RESPONSE.txt:3 states test, vet and CLI smoke checks were performed, and :5 gives build/run usage. This new CLI is not subject to the refactor-only CHANGES.md requirement."
+        }
+      ]
+    },
+    {
+      "id": "run-08",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/inventory.go:17 preserves Item fields/JSON tags; :25, :27, :38, :43, :59, :78 and :116 retain the concrete inventory API including Report(verbose bool). The imports at :3 are standard library and numberError at :108 is a private parsing helper, with no speculative public abstractions."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/inventory_test.go:28 tests arithmetic boundaries, restock nonmutation and product/sum overflow; :56 checks missing names and invalid values; :81 checks file/syntax/range error chains; :114 checks sorted reports, load replacement/trimming, repeated totals and JSON shape; :140 exercises the promised usable zero value."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "candidate/inventory.go:27, :43, :59, :78 and :116 have no public API documentation despite non-obvious replacement, validation, missing-name/overflow, load and report contracts; the comment at :107 is for a private helper only. candidate/CHANGES.md:5 and :9 cover requested fixes and retained behavior, and candidate/RESPONSE.txt:7 states test/vet results, but the exported-documentation portion is unmet."
+        }
+      ]
+    },
+    {
+      "id": "run-09",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/inventory.go:17 preserves Item fields and JSON tags; :25, :27, :38, :43, :59, :78 and :107 provide the existing concrete operations including Report(verbose bool). The standard-library-only imports at :3 and direct map/string handling add no speculative abstractions or dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/inventory_test.go:27 checks validation, replacement, JSON shape, repeated totals and missing-name errors; :68 tests arithmetic limits and unchanged state after restock overflow; :115 tests file, syntax/range and valid-load behavior; :164 repeatedly checks deterministic ordering in both report modes."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "candidate/inventory.go:27, :43, :59, :78 and :107 contain no exported API comments for non-obvious replacement, error/overflow, loading and ordering behavior. candidate/CHANGES.md:3 and :17 thoroughly describe fixes and deliberately retained compatibility, and candidate/RESPONSE.txt:8 states test/vet checks passed, but API documentation required by this assertion is absent."
+        }
+      ]
+    },
+    {
+      "id": "run-10",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/main.go:15 uses a private summary type, :21 a focused io.Reader method, :45 a private CLI runner, and :96 the process entrypoint. Standard-library imports at :3 and dependency-free candidate/go.mod:1 fit the requested practical CLI without speculative exported interfaces or constructors."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/main_test.go:18 asserts exact aggregate/tie-sorted output and entry filtering; :35 checks skipped invalid records; :46 processes exactly 1 MiB lines with/without final newline; :58 and :65 check empty-directory and argument failures; :77 verifies unreadable-path diagnostics, nonzero status and continued readable output."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/main.go:15, :21, :45 and :96 introduce no exported library API, so exported API documentation is not applicable. candidate/RESPONSE.txt:1 describes supported CLI behavior, :3 reports go test ./... and go vet ./... pass, and :5 documents invocation. The CHANGES.md clause applies to refactors, not this new command."
+        }
+      ]
+    },
+    {
+      "id": "run-11",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/inventory.go:17 keeps Item fields and JSON tags; :25, :27, :38, :43, :59, :78 and :116 retain the requested inventory operations and Report(verbose bool). All imports at :3 are standard library and the only added error helper at :108 is private, with no speculative public API."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/inventory_test.go:28 checks replacement, repeated/empty totals and JSON compatibility; :54 checks sorted formatting in both report modes; :78 covers missing names, validation, arithmetic overflow, boundaries and nonmutation; :120 tests file/syntax/range failures with error identity and line context plus compatible valid loading."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "candidate/inventory.go:27, :43, :59, :78 and :116 lack exported API documentation for replacement, error categories/overflow, loading and report ordering. Its explanatory comment at :107 covers only a private helper. candidate/CHANGES.md:3 and :8 explain requested fixes and deliberately retained behavior, and candidate/RESPONSE.txt:7 reports test/vet checks, but do not supply the missing exported contracts."
+        }
+      ]
+    },
+    {
+      "id": "run-12",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/main.go:17 is a thin main; :19 runs the command with standard writers, with private readFile/readRecords/recordLevel helpers at :64, :73 and :95. Imports at :4 are standard library and candidate/go.mod:1 has no external dependency; no speculative exported API is introduced."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/main_test.go:13 checks exact output/tie sorting and file filtering; :29 covers invalid field shapes; :39 tests 1 MiB records with and without a final newline; :51, :58 and :68 exercise empty-directory, argument and unreadable-entry failures; :86 additionally verifies read/write failure propagation."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/main.go:1 identifies the command and :17, :19, :64, :73, :95 expose no exported library API requiring contract comments. candidate/RESPONSE.txt:1 describes validation and continuing after file errors, :3 reports tests and go vet ./... pass, and :5 supplies build/run usage. CHANGES.md is not required for this new CLI."
+        }
+      ]
+    },
+    {
+      "id": "run-13",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/main.go:15 contains the process entrypoint, :19 a private summary type, and :25 a private runner with standard io.Writer parameters. File/record/output helpers at :54, :67, :89 and :104 are private and focused; imports at :3 are standard library, with no speculative public interfaces/builders/dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/main_test.go:19 checks exact sorted summary and ignored entries; :35 tests malformed/missing/wrong-type records; :45 tests exactly 1 MiB records including an unterminated last line; :57 covers empty/bad arguments; :72 checks path-specific unreadable errors plus continued output; :93 exercises reader/writer failures."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/main.go:15, :19, :25 and :54 define no exported library API, so the exported-API documentation clause is inapplicable. candidate/RESPONSE.txt:1 summarizes CLI behavior, :3 states tests/vet/build/executable smoke checks passed, and :5 gives an invocation with the VCS flag. This is not a refactor requiring CHANGES.md."
+        }
+      ]
+    },
+    {
+      "id": "run-14",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/semver.go:17 provides the concrete Version value and :26, :92 and :106 implement the requested Parse, value-receiver String and Compare signatures. Imports at :7 are standard library, with validation kept in private helpers at :61 and :73 and no speculative constructors/interfaces/dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/semver_test.go:11 tests valid round trips, exposed fields, uint64 maxima and huge prerelease identifiers; :36 rejects malformed versions and overflow in each core position; :64 exercises SemVer ordering, large-number ordering and ignored metadata in both directions; :102 provides a checked example and :115 checks parse/round-trip invariants."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/semver.go:1 explains strict accepted syntax; :13 explains zero value, field representation and responsibility for manually constructed values; :23 documents numeric limits and zero-on-error; :91 and :103 document formatting and comparison including ignored metadata and valid-input preconditions. candidate/RESPONSE.txt:5 reports test/coverage, vet and fuzz results. The refactor CHANGES.md clause does not apply."
+        }
+      ]
+    },
+    {
+      "id": "run-15",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/semver.go:18 defines the concrete Version type and :27, :94 and :109 directly provide the requested Parse/String/Compare signatures. Imports at :7 are standard library and helpers at :62 and :74 are private; there are no speculative interfaces, constructors, builders or dependencies."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/semver_test.go:11 verifies valid versions, fields, formatting and uint64 maxima; :37 exercises malformed syntax and overflow in every core position; :64 tests the SemVer precedence sequence, arbitrary-length numeric ordering, ASCII cases and ignored metadata; :102 is an executable example and :112 adds parse invariants."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/semver.go:1 documents strict parsing and metadata precedence; :13 explains the zero value, field delimiters and valid-manual-value responsibility; :24 explains rejection/errors; :92 promises round trips; :105 explains Compare results, prerelease rules and valid-version preconditions. candidate/RESPONSE.txt:8 reports completed test/vet validation. This is a new package, not a refactor needing CHANGES.md."
+        }
+      ]
+    },
+    {
+      "id": "run-16",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/semver.go:16 defines a concrete Version and :23, :80 and :93 directly implement the requested signatures. Standard-library imports at :7 and private numeric/identifier helpers at :52 and :64 keep the package dependency-free without speculative interfaces or constructors."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/semver_test.go:11 tests valid round trips, uint64 maxima, huge prerelease identifiers and zero formatting; :32 rejects syntax and each core overflow; :62 tests SemVer precedence and numeric/ASCII edge cases in both directions; :89 verifies ignored build metadata and :100 supplies a checked usage example."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/semver.go:1 explains strict syntax and metadata; :13 explains immutable values, zero value and numeric limits; :21 documents malformed/overflow rejection and zero-on-error; :79 and :91 document formatting and comparison results including metadata exclusion. candidate/RESPONSE.txt:5 states test/vet and fuzz validation passed. The refactor-specific CHANGES.md requirement does not apply."
+        }
+      ]
+    },
+    {
+      "id": "run-17",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/main.go:15 is the process entrypoint and :19 a private runner taking standard io.Writer values, with focused private helpers at :65, :78 and :98. Standard-library imports at :3 and candidate/go.mod:1 keep the command dependency-free without speculative public abstractions."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/main_test.go:20 asserts exact sorted counts, skipped records and entry filtering; :36 validates malformed/missing/null/wrong-type fields; :46 processes exactly 1 MiB records with and without final newline; :59 and :74 cover empty/bad arguments and unreadable paths with continued processing; :96 checks read/write failures."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/main.go:15, :19, :65, :78 and :98 add no exported Go library API requiring documentation. candidate/RESPONSE.txt:1 describes supported CLI behavior, :3 states tests/vet/build/smoke checks passed, and :5 documents build and invocation. The refactor-only CHANGES.md clause does not apply to the new command."
+        }
+      ]
+    },
+    {
+      "id": "run-18",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "candidate/semver.go:18 defines the concrete Version and :27, :97 and :111 implement exactly the requested Parse, value-receiver String and Compare entrypoints. Imports at :8 are standard library, validation helpers at :65 and :77 remain private, and no speculative API layer or dependency is added."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "candidate/semver_test.go:9 asserts valid round trips, public fields, uint64 maxima and huge numeric prereleases; :34 checks malformed versions and overflow in each core component; :52 checks SemVer precedence, large numeric/ASCII/prefix cases in both directions; :88 checks ignored metadata and :100 is a checked executable example."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "candidate/semver.go:1 explains strict syntax and metadata behavior; :14 documents zero value, identifier representation and manually modified versions; :24 documents uint64 limits, arbitrary prerelease length and zero/error results; :95 documents exact formatting and :108 comparison results/preconditions. candidate/RESPONSE.txt:5 reports unit tests, vet and fuzz checks passed. Refactor-specific CHANGES.md is not applicable."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1659 @@
+{
+  "environment": {
+    "go": "go version go1.27.3 linux/amd64",
+    "agent": "codex-cli 0.163.0",
+    "model": "runner default; inspect events for any reported model identity",
+    "settings": "ignore-user-config; workspace-write; ephemeral; explicit skill loading",
+    "evaluates_discovery": false,
+    "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c"
+  },
+  "assessment": {
+    "go": "go version go1.27.3 linux/amd64",
+    "GOFLAGS": "-buildvcs=false",
+    "grader_sha256": "837405acfa34a98b68dd940b36f8604e860c3c8247843a6c01bb478b311a6e15",
+    "common_sha256": "b53b82ddbc2a08692a69d34c763d84765a94655cca5bdd9408ee6342a638e471",
+    "scope": "automated behavioral checks; qualitative rubrics ungraded"
+  },
+  "runs": [
+    {
+      "case": "log-summary-cli",
+      "condition": "with",
+      "repetition": 1,
+      "started": "2026-10-31T11:38:13.519396+00:00",
+      "seconds": 73.39,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 214137,
+        "cached_input_tokens": 199808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3465,
+        "reasoning_output_tokens": 137
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "2e56a0975360928df6f49063dafeedac56ddd6869de9ce3670c5f83170c29b38",
+      "run_id": "log-summary-cli--with--1",
+      "grade": {
+        "case": "log-summary-cli",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "aggregation",
+            "test": "TestTastyAggregation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyAggregation\n--- PASS: TestTastyAggregation (0.00s)\n"
+          },
+          {
+            "id": "invalid-records",
+            "test": "TestTastyInvalidRecords",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidRecords\n--- PASS: TestTastyInvalidRecords (0.00s)\n"
+          },
+          {
+            "id": "long-record",
+            "test": "TestTastyLongRecord",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongRecord\n--- PASS: TestTastyLongRecord (0.00s)\n"
+          },
+          {
+            "id": "empty-directory",
+            "test": "TestTastyEmptyDirectory",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyEmptyDirectory\n--- PASS: TestTastyEmptyDirectory (0.00s)\n"
+          },
+          {
+            "id": "argument-errors",
+            "test": "TestTastyArgumentErrors",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyArgumentErrors\n--- PASS: TestTastyArgumentErrors (0.00s)\n"
+          },
+          {
+            "id": "unreadable-entry",
+            "test": "TestTastyUnreadableEntry",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyUnreadableEntry\n--- PASS: TestTastyUnreadableEntry (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/log-summary-cli--with--1",
+      "artifact_sha256": {
+        "RESPONSE.txt": "9ae10b95d8c44ea878b2b0eebfd0155fdc2003742875712272789bcef1730113",
+        "go.mod": "7461ac4a6c856ad924f34fb0b586d49060bbad2597f0da87b09c0dfe55c3993c",
+        "main.go": "d2429f724209736de7934fd18d66895dbc3a251398da257ff7c3b5b56a4866f3",
+        "main_test.go": "900fde85770042d7b9ef2f4c2c331c3e0f5cf2c483d051dd570ff3dffb645c3e"
+      }
+    },
+    {
+      "case": "log-summary-cli",
+      "condition": "with",
+      "repetition": 2,
+      "started": "2026-10-31T11:34:45.145251+00:00",
+      "seconds": 54.08,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 111637,
+        "cached_input_tokens": 82304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2716,
+        "reasoning_output_tokens": 100
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "a5ca3a7dd6c2690d36870ac5465300c85f845099ae11c2e81dda3ba127465753",
+      "run_id": "log-summary-cli--with--2",
+      "grade": {
+        "case": "log-summary-cli",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "aggregation",
+            "test": "TestTastyAggregation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyAggregation\n--- PASS: TestTastyAggregation (0.00s)\n"
+          },
+          {
+            "id": "invalid-records",
+            "test": "TestTastyInvalidRecords",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidRecords\n--- PASS: TestTastyInvalidRecords (0.00s)\n"
+          },
+          {
+            "id": "long-record",
+            "test": "TestTastyLongRecord",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongRecord\n--- PASS: TestTastyLongRecord (0.00s)\n"
+          },
+          {
+            "id": "empty-directory",
+            "test": "TestTastyEmptyDirectory",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyEmptyDirectory\n--- PASS: TestTastyEmptyDirectory (0.00s)\n"
+          },
+          {
+            "id": "argument-errors",
+            "test": "TestTastyArgumentErrors",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyArgumentErrors\n--- PASS: TestTastyArgumentErrors (0.01s)\n"
+          },
+          {
+            "id": "unreadable-entry",
+            "test": "TestTastyUnreadableEntry",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyUnreadableEntry\n--- PASS: TestTastyUnreadableEntry (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/log-summary-cli--with--2",
+      "artifact_sha256": {
+        "RESPONSE.txt": "d8cfaf740dfeb05a5a690fd83923fc03ff3cf820697b8a2def1a14d5f2d705c3",
+        "go.mod": "7461ac4a6c856ad924f34fb0b586d49060bbad2597f0da87b09c0dfe55c3993c",
+        "main.go": "f85a6ff39c7c8b90ae90393ae464bf8e9b0d12d724c265d13d62931b72350db9",
+        "main_test.go": "4615da6021cd53c374833b2ab82c88808881825654f347fb9feca1ca635a2406"
+      }
+    },
+    {
+      "case": "log-summary-cli",
+      "condition": "with",
+      "repetition": 3,
+      "started": "2026-10-31T11:34:35.304803+00:00",
+      "seconds": 59.82,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 112733,
+        "cached_input_tokens": 102272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3285,
+        "reasoning_output_tokens": 97
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "fe5dfbc79b9770737973589002e933f1ef4e7ec6a4f47f1a6e9940d19bfc6b77",
+      "run_id": "log-summary-cli--with--3",
+      "grade": {
+        "case": "log-summary-cli",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "aggregation",
+            "test": "TestTastyAggregation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyAggregation\n--- PASS: TestTastyAggregation (0.00s)\n"
+          },
+          {
+            "id": "invalid-records",
+            "test": "TestTastyInvalidRecords",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidRecords\n--- PASS: TestTastyInvalidRecords (0.00s)\n"
+          },
+          {
+            "id": "long-record",
+            "test": "TestTastyLongRecord",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongRecord\n--- PASS: TestTastyLongRecord (0.00s)\n"
+          },
+          {
+            "id": "empty-directory",
+            "test": "TestTastyEmptyDirectory",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyEmptyDirectory\n--- PASS: TestTastyEmptyDirectory (0.00s)\n"
+          },
+          {
+            "id": "argument-errors",
+            "test": "TestTastyArgumentErrors",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyArgumentErrors\n--- PASS: TestTastyArgumentErrors (0.00s)\n"
+          },
+          {
+            "id": "unreadable-entry",
+            "test": "TestTastyUnreadableEntry",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyUnreadableEntry\n--- PASS: TestTastyUnreadableEntry (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/log-summary-cli--with--3",
+      "artifact_sha256": {
+        "RESPONSE.txt": "abbc08f7c0bb7765af5d2a231f93f47644e3ceb6cae75068d201778c67fff763",
+        "go.mod": "7461ac4a6c856ad924f34fb0b586d49060bbad2597f0da87b09c0dfe55c3993c",
+        "main.go": "5029782541bab7fb0a9e4cf06b2a05c336fb09754e44ca77b565dbc59484937c",
+        "main_test.go": "76de568d660205109763dc274b880b8bea2b4716016860e1c3cb473b9ca80828"
+      }
+    },
+    {
+      "case": "log-summary-cli",
+      "condition": "without",
+      "repetition": 1,
+      "started": "2026-10-31T11:39:10.872366+00:00",
+      "seconds": 62.63,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 91446,
+        "cached_input_tokens": 68480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2928,
+        "reasoning_output_tokens": 201
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "51e2872be12f5b05b4f5af9168bb4000433c2b144ec1ae02e4653bb598292fa6",
+      "run_id": "log-summary-cli--without--1",
+      "grade": {
+        "case": "log-summary-cli",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "aggregation",
+            "test": "TestTastyAggregation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyAggregation\n--- PASS: TestTastyAggregation (0.00s)\n"
+          },
+          {
+            "id": "invalid-records",
+            "test": "TestTastyInvalidRecords",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidRecords\n--- PASS: TestTastyInvalidRecords (0.00s)\n"
+          },
+          {
+            "id": "long-record",
+            "test": "TestTastyLongRecord",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongRecord\n--- PASS: TestTastyLongRecord (0.00s)\n"
+          },
+          {
+            "id": "empty-directory",
+            "test": "TestTastyEmptyDirectory",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyEmptyDirectory\n--- PASS: TestTastyEmptyDirectory (0.00s)\n"
+          },
+          {
+            "id": "argument-errors",
+            "test": "TestTastyArgumentErrors",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyArgumentErrors\n--- PASS: TestTastyArgumentErrors (0.00s)\n"
+          },
+          {
+            "id": "unreadable-entry",
+            "test": "TestTastyUnreadableEntry",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyUnreadableEntry\n--- PASS: TestTastyUnreadableEntry (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/log-summary-cli--without--1",
+      "artifact_sha256": {
+        "RESPONSE.txt": "fb6c6a60ac431d5c137eba4c3fc3eeb33faf43461e0c1a9340907f706998ffca",
+        "go.mod": "7461ac4a6c856ad924f34fb0b586d49060bbad2597f0da87b09c0dfe55c3993c",
+        "main.go": "3e20fe2eaa8e6265ab30ea8c9e419ff656761bf68c82b953185f4433a987b50f",
+        "main_test.go": "e8e24f07ac90745c9fc4d2d4c9bf7f006701cd6d641594647f6c4402903af32c"
+      }
+    },
+    {
+      "case": "log-summary-cli",
+      "condition": "without",
+      "repetition": 2,
+      "started": "2026-10-31T11:40:15.454387+00:00",
+      "seconds": 76.62,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 150698,
+        "cached_input_tokens": 138496,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3685,
+        "reasoning_output_tokens": 135
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "5120f3ad56ba5867ace26d79f8badbeb5b88ff59f05add01d4165f9bc0b9fcb7",
+      "run_id": "log-summary-cli--without--2",
+      "grade": {
+        "case": "log-summary-cli",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "aggregation",
+            "test": "TestTastyAggregation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyAggregation\n--- PASS: TestTastyAggregation (0.00s)\n"
+          },
+          {
+            "id": "invalid-records",
+            "test": "TestTastyInvalidRecords",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidRecords\n--- PASS: TestTastyInvalidRecords (0.00s)\n"
+          },
+          {
+            "id": "long-record",
+            "test": "TestTastyLongRecord",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongRecord\n--- PASS: TestTastyLongRecord (0.00s)\n"
+          },
+          {
+            "id": "empty-directory",
+            "test": "TestTastyEmptyDirectory",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyEmptyDirectory\n--- PASS: TestTastyEmptyDirectory (0.00s)\n"
+          },
+          {
+            "id": "argument-errors",
+            "test": "TestTastyArgumentErrors",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyArgumentErrors\n--- PASS: TestTastyArgumentErrors (0.01s)\n"
+          },
+          {
+            "id": "unreadable-entry",
+            "test": "TestTastyUnreadableEntry",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyUnreadableEntry\n--- PASS: TestTastyUnreadableEntry (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/log-summary-cli--without--2",
+      "artifact_sha256": {
+        "RESPONSE.txt": "aaa35f514991f710d90294c2bd3db3c976f387adac1ac3eac40df8d2bf59a7ab",
+        "go.mod": "7461ac4a6c856ad924f34fb0b586d49060bbad2597f0da87b09c0dfe55c3993c",
+        "main.go": "9797135fa24a5859549fa8e72cd72409087545aa6d8dc46e5f772d4e5de107c9",
+        "main_test.go": "db2ba905e2ad58b27988a699d8d29f8d95063582c39b03ee401c68cdc118de11"
+      }
+    },
+    {
+      "case": "log-summary-cli",
+      "condition": "without",
+      "repetition": 3,
+      "started": "2026-10-31T11:35:39.335164+00:00",
+      "seconds": 59.73,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 100254,
+        "cached_input_tokens": 82816,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3150,
+        "reasoning_output_tokens": 239
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "1981e0d39d635b17df1f1a00026e1af99b7903d2cca813fe74e5fe2a95323c05",
+      "run_id": "log-summary-cli--without--3",
+      "grade": {
+        "case": "log-summary-cli",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "aggregation",
+            "test": "TestTastyAggregation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyAggregation\n--- PASS: TestTastyAggregation (0.00s)\n"
+          },
+          {
+            "id": "invalid-records",
+            "test": "TestTastyInvalidRecords",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidRecords\n--- PASS: TestTastyInvalidRecords (0.00s)\n"
+          },
+          {
+            "id": "long-record",
+            "test": "TestTastyLongRecord",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongRecord\n--- PASS: TestTastyLongRecord (0.00s)\n"
+          },
+          {
+            "id": "empty-directory",
+            "test": "TestTastyEmptyDirectory",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyEmptyDirectory\n--- PASS: TestTastyEmptyDirectory (0.00s)\n"
+          },
+          {
+            "id": "argument-errors",
+            "test": "TestTastyArgumentErrors",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyArgumentErrors\n--- PASS: TestTastyArgumentErrors (0.01s)\n"
+          },
+          {
+            "id": "unreadable-entry",
+            "test": "TestTastyUnreadableEntry",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyUnreadableEntry\n--- PASS: TestTastyUnreadableEntry (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/log-summary-cli--without--3",
+      "artifact_sha256": {
+        "RESPONSE.txt": "37cfe92209256c6f10b04b473fa7127bcec5606e8e5cfcbd5a626b3fb8fe2fa1",
+        "go.mod": "7461ac4a6c856ad924f34fb0b586d49060bbad2597f0da87b09c0dfe55c3993c",
+        "main.go": "41fc232bcd311bd7c1d15df23af6b141b3ce5489fd150f6f0e8796f7d13f875b",
+        "main_test.go": "41b9bf203b552d8f680f5c531175ce721b4d1d0c0073ff0c7c45205f6e69f6ed"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "with",
+      "repetition": 1,
+      "started": "2026-10-31T11:41:40.042777+00:00",
+      "seconds": 64.55,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 142349,
+        "cached_input_tokens": 126336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3212,
+        "reasoning_output_tokens": 52
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "2782c548d44ac638f4975377b9a7ebe68d56aa6c9d0d21faeb0d1cfe934b7ffc",
+      "run_id": "refactor-inventory-module--with--1",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--with--1",
+      "artifact_sha256": {
+        "CHANGES.md": "026c3d6f1c0f1fda197fe9796c4452703e7e59c5e8f58147c6c0824822266631",
+        "RESPONSE.txt": "a69eca5a412ae36956c15d9b72299e172c2eccecd6d41196ed3413459aae2e74",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "7fc4d47bd8d96abd8b15cbc02567682656285ce41035aff29e93c2b4c7241176",
+        "inventory_test.go": "66e0910f6f54d6df5e87d3ac5646ad37c6e8893cca36478efb749fc1285985c8"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "with",
+      "repetition": 2,
+      "started": "2026-10-31T11:36:39.690749+00:00",
+      "seconds": 58.71,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 112823,
+        "cached_input_tokens": 88192,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3062,
+        "reasoning_output_tokens": 45
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "6d694ebe5613d1764f4f13cdb932281a827ef6a43742f0efd70c39c13280989a",
+      "run_id": "refactor-inventory-module--with--2",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--with--2",
+      "artifact_sha256": {
+        "CHANGES.md": "4306f11ce64899e910479bba98aabbbe3e0bbf1e67996aa0b28db2c1b2bf91a9",
+        "RESPONSE.txt": "07236018abada0c3391f51e05782d353d6f62cf353844b0397124e7b14c87d9b",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "703c830b08b15316050d657d0a17941a1afad9746c3126103b6c350391599739",
+        "inventory_test.go": "89fd350d656feea1653d72b2b304f48e94a615c675bf96a7b7992a5ca52514e5"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "with",
+      "repetition": 3,
+      "started": "2026-10-31T11:37:42.421516+00:00",
+      "seconds": 85.46,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 161016,
+        "cached_input_tokens": 144896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3536,
+        "reasoning_output_tokens": 30
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "3af96a03279009d52838b7e97309fd43a270082e77b13f2e51c5e53351b3cfba",
+      "run_id": "refactor-inventory-module--with--3",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--with--3",
+      "artifact_sha256": {
+        "CHANGES.md": "021dc0726b8ca7808fd3b0c8bb114f50c9be7fc9107052402fa854901cdb9ae5",
+        "RESPONSE.txt": "8fea8a1be6cf5054131fa9e1435cfc87a81784d1607168dddc495f29f2fc35fe",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "6cc67ce2b2c66d3e1c100aac45201ef893dd2abd883e7f6cc5c8c0bb9d873417",
+        "inventory_test.go": "b489fc027bbc05b4b6a814e80d7236a856e05f22487599495c08fc5657cd3222"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "without",
+      "repetition": 1,
+      "started": "2026-10-31T11:33:28.518147+00:00",
+      "seconds": 76.17,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 148565,
+        "cached_input_tokens": 123648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4107,
+        "reasoning_output_tokens": 127
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "c17ca750cc3227f046cc2ae2c7b69ba7ac5aef3c6af088baf4ceaeacaa5b6902",
+      "run_id": "refactor-inventory-module--without--1",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--without--1",
+      "artifact_sha256": {
+        "CHANGES.md": "3ee23fdc98a67ff1db2b2b34346b1ab3191eecae991c2341e00c4ca3f4d64f3b",
+        "RESPONSE.txt": "1d89ed38a1451d5d84abd46030958ecbda41a60bb728537118ad1cdcc3da1959",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "622f47e1f4ec904c9402f359759b3cb635982791d8afc3a5d5a162a11eb068e7",
+        "inventory_test.go": "5afdcc8ecd0f45db4b7f0fc390ec3eba784009b35f4e1ca7757ecedbba90b450"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "without",
+      "repetition": 2,
+      "started": "2026-10-31T11:41:32.573726+00:00",
+      "seconds": 63.71,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 118793,
+        "cached_input_tokens": 107264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3069,
+        "reasoning_output_tokens": 98
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "0a90f3892a203ba0d63dafd3136d477ef5948027db0b956676e60b19ea8f7380",
+      "run_id": "refactor-inventory-module--without--2",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--without--2",
+      "artifact_sha256": {
+        "CHANGES.md": "9bb925754cdbbc69078a5f7f0601dacd17ce42c5e7194415862d4f4d3eaa3903",
+        "RESPONSE.txt": "78e338982a44184968062bb737c12633a45e6cefe85d3401eda3d4b482235afb",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "3fe88ae10f46aa08d8f5e0bcd4e8e42aa2de2f6dc2d53f142dcf4abc482e5cf1",
+        "inventory_test.go": "b0c82260a41c76cdd248ef65d438f7b521af048bc1ad61039450c149dbecc24c"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "without",
+      "repetition": 3,
+      "started": "2026-10-31T11:39:28.043966+00:00",
+      "seconds": 61.08,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 95919,
+        "cached_input_tokens": 84480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3412,
+        "reasoning_output_tokens": 82
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "d1d75692de634e4f758d88661b23f6a3f0b98007eb2f71b10c2e693270a7e9ae",
+      "run_id": "refactor-inventory-module--without--3",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--without--3",
+      "artifact_sha256": {
+        "CHANGES.md": "2cfca637a6aeb2049ecb8873e7c286144b642fa9c921949911142463deba8b77",
+        "RESPONSE.txt": "4d5a37b849d65aa12bc2c19286551b3e2566a892c6162b4ab8b541dc483e3a1c",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "97745fe67fa0508379d0797e36dcc90494751bde3b3a4e52f3904e1f6879d366",
+        "inventory_test.go": "28acd087a8a9e60daed656270808a4cef442f82f0bbbe90cb81c67806056d038"
+      }
+    },
+    {
+      "case": "semver-library-api",
+      "condition": "with",
+      "repetition": 1,
+      "started": "2026-10-31T11:35:35.316522+00:00",
+      "seconds": 65.05,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 128901,
+        "cached_input_tokens": 99200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3477,
+        "reasoning_output_tokens": 37
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "74370d4cc51d5d109b6e5e3732b027b16c121375cc9b53294eab01803a8e5531",
+      "run_id": "semver-library-api--with--1",
+      "grade": {
+        "case": "semver-library-api",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "round-trip",
+            "test": "TestTastyRoundTrip",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyRoundTrip\n--- PASS: TestTastyRoundTrip (0.00s)\n"
+          },
+          {
+            "id": "invalid-input",
+            "test": "TestTastyInvalidInput",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidInput\n--- PASS: TestTastyInvalidInput (0.00s)\n"
+          },
+          {
+            "id": "core-overflow",
+            "test": "TestTastyCoreOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyCoreOverflow\n--- PASS: TestTastyCoreOverflow (0.00s)\n"
+          },
+          {
+            "id": "precedence",
+            "test": "TestTastyPrecedence",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPrecedence\n--- PASS: TestTastyPrecedence (0.00s)\n"
+          },
+          {
+            "id": "build-metadata",
+            "test": "TestTastyBuildMetadata",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyBuildMetadata\n--- PASS: TestTastyBuildMetadata (0.00s)\n"
+          },
+          {
+            "id": "large-prerelease",
+            "test": "TestTastyLongPrereleaseNumbers",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongPrereleaseNumbers\n--- PASS: TestTastyLongPrereleaseNumbers (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/semver-library-api--with--1",
+      "artifact_sha256": {
+        "RESPONSE.txt": "db8af91a474274ebbb07ff08a9deedd7970f279b7a554de5e371a41cc82b10f1",
+        "go.mod": "5afc0980fd0fd599ac14bc37c2abb7d9a8aeb5a35d957b6ab419767f5c17aa58",
+        "semver.go": "39b92807440ad3b5506e71f03dce899ff34d741d6f636f272461ccc9a5b2a1b7",
+        "semver_test.go": "e630fb02f14c7afbaae11c4ae1f5599e1e749f2abf808e0e515c26dffb4b4d9e"
+      }
+    },
+    {
+      "case": "semver-library-api",
+      "condition": "with",
+      "repetition": 2,
+      "started": "2026-10-31T11:36:43.659226+00:00",
+      "seconds": 89.29,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 139164,
+        "cached_input_tokens": 128384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4347,
+        "reasoning_output_tokens": 30
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "9b89e3ce21de4c834e9fc6d7242e158c1ae17378f328b6ff73639d3bc4704a54",
+      "run_id": "semver-library-api--with--2",
+      "grade": {
+        "case": "semver-library-api",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "round-trip",
+            "test": "TestTastyRoundTrip",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyRoundTrip\n--- PASS: TestTastyRoundTrip (0.00s)\n"
+          },
+          {
+            "id": "invalid-input",
+            "test": "TestTastyInvalidInput",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidInput\n--- PASS: TestTastyInvalidInput (0.00s)\n"
+          },
+          {
+            "id": "core-overflow",
+            "test": "TestTastyCoreOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyCoreOverflow\n--- PASS: TestTastyCoreOverflow (0.00s)\n"
+          },
+          {
+            "id": "precedence",
+            "test": "TestTastyPrecedence",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPrecedence\n--- PASS: TestTastyPrecedence (0.00s)\n"
+          },
+          {
+            "id": "build-metadata",
+            "test": "TestTastyBuildMetadata",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyBuildMetadata\n--- PASS: TestTastyBuildMetadata (0.00s)\n"
+          },
+          {
+            "id": "large-prerelease",
+            "test": "TestTastyLongPrereleaseNumbers",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongPrereleaseNumbers\n--- PASS: TestTastyLongPrereleaseNumbers (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/semver-library-api--with--2",
+      "artifact_sha256": {
+        "RESPONSE.txt": "979f7087d014974e29025467e22d4550341b5354d3bf39cdbc9ac309ac02955d",
+        "go.mod": "5afc0980fd0fd599ac14bc37c2abb7d9a8aeb5a35d957b6ab419767f5c17aa58",
+        "semver.go": "e9512a50094fb06f01649c26a0cdd681e528829045df8692a675331360531e13",
+        "semver_test.go": "0374498b1091365419180f0d32f7aaad8d49240750b0524970009fdfc473a038"
+      }
+    },
+    {
+      "case": "semver-library-api",
+      "condition": "with",
+      "repetition": 3,
+      "started": "2026-10-31T11:31:44.130947+00:00",
+      "seconds": 103.88,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 245386,
+        "cached_input_tokens": 213376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4152,
+        "reasoning_output_tokens": 36
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "4e2b64e5c7a5a4ea6f1c5c47c6d7e04431d125ed902970fcba22416cf843b3b8",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "e2048aa8cdce055060018ec563e2f4b10508b049cb5fb451fa70f50ba09c957b",
+      "run_id": "semver-library-api--with--3",
+      "grade": {
+        "case": "semver-library-api",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "round-trip",
+            "test": "TestTastyRoundTrip",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyRoundTrip\n--- PASS: TestTastyRoundTrip (0.00s)\n"
+          },
+          {
+            "id": "invalid-input",
+            "test": "TestTastyInvalidInput",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidInput\n--- PASS: TestTastyInvalidInput (0.00s)\n"
+          },
+          {
+            "id": "core-overflow",
+            "test": "TestTastyCoreOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyCoreOverflow\n--- PASS: TestTastyCoreOverflow (0.00s)\n"
+          },
+          {
+            "id": "precedence",
+            "test": "TestTastyPrecedence",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPrecedence\n--- PASS: TestTastyPrecedence (0.00s)\n"
+          },
+          {
+            "id": "build-metadata",
+            "test": "TestTastyBuildMetadata",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyBuildMetadata\n--- PASS: TestTastyBuildMetadata (0.00s)\n"
+          },
+          {
+            "id": "large-prerelease",
+            "test": "TestTastyLongPrereleaseNumbers",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongPrereleaseNumbers\n--- PASS: TestTastyLongPrereleaseNumbers (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/semver-library-api--with--3",
+      "artifact_sha256": {
+        "RESPONSE.txt": "7fbe18214ca6ee4cbb87b1aa3b532c8d7d4df1071f5ebd73772955e98226031a",
+        "go.mod": "5afc0980fd0fd599ac14bc37c2abb7d9a8aeb5a35d957b6ab419767f5c17aa58",
+        "semver.go": "6a5edac5d039e1abeb3137a0ab1744f876b8dc046856719a2682af82ac4a60f8",
+        "semver_test.go": "00a05fd90e042e9d31e0a016a78321aa21644906143fd1b8cfa77a50d27ae7fa"
+      }
+    },
+    {
+      "case": "semver-library-api",
+      "condition": "without",
+      "repetition": 1,
+      "started": "2026-10-31T11:40:30.822825+00:00",
+      "seconds": 68.55,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 103463,
+        "cached_input_tokens": 89088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3921,
+        "reasoning_output_tokens": 49
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "6fbe4382ac3c315490fd4ed592b58e27e54576c086aee3c738fd0553ae1fd5a3",
+      "run_id": "semver-library-api--without--1",
+      "grade": {
+        "case": "semver-library-api",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "round-trip",
+            "test": "TestTastyRoundTrip",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyRoundTrip\n--- PASS: TestTastyRoundTrip (0.00s)\n"
+          },
+          {
+            "id": "invalid-input",
+            "test": "TestTastyInvalidInput",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidInput\n--- PASS: TestTastyInvalidInput (0.00s)\n"
+          },
+          {
+            "id": "core-overflow",
+            "test": "TestTastyCoreOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyCoreOverflow\n--- PASS: TestTastyCoreOverflow (0.00s)\n"
+          },
+          {
+            "id": "precedence",
+            "test": "TestTastyPrecedence",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPrecedence\n--- PASS: TestTastyPrecedence (0.00s)\n"
+          },
+          {
+            "id": "build-metadata",
+            "test": "TestTastyBuildMetadata",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyBuildMetadata\n--- PASS: TestTastyBuildMetadata (0.00s)\n"
+          },
+          {
+            "id": "large-prerelease",
+            "test": "TestTastyLongPrereleaseNumbers",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongPrereleaseNumbers\n--- PASS: TestTastyLongPrereleaseNumbers (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/semver-library-api--without--1",
+      "artifact_sha256": {
+        "RESPONSE.txt": "b1ba9280516f2ca12c2c7987f79d33feb9e801251949483eeba78dfe5274329e",
+        "go.mod": "5afc0980fd0fd599ac14bc37c2abb7d9a8aeb5a35d957b6ab419767f5c17aa58",
+        "semver.go": "b32bd610818170d9093aa860edbc7fde928e516aa625647629f07c2299d4c4bf",
+        "semver_test.go": "f192a6de6890d6321eb9cb3fbd6e54f6bb2b668ec0c78515c86f1a322dc7535e"
+      }
+    },
+    {
+      "case": "semver-library-api",
+      "condition": "without",
+      "repetition": 2,
+      "started": "2026-10-31T11:31:44.126008+00:00",
+      "seconds": 102.41,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 224766,
+        "cached_input_tokens": 203264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4417,
+        "reasoning_output_tokens": 104
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "c615e17e9349b14146628f76225c791d13362f385a403e2926f14ea1f77e6de8",
+      "run_id": "semver-library-api--without--2",
+      "grade": {
+        "case": "semver-library-api",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "round-trip",
+            "test": "TestTastyRoundTrip",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyRoundTrip\n--- PASS: TestTastyRoundTrip (0.00s)\n"
+          },
+          {
+            "id": "invalid-input",
+            "test": "TestTastyInvalidInput",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidInput\n--- PASS: TestTastyInvalidInput (0.00s)\n"
+          },
+          {
+            "id": "core-overflow",
+            "test": "TestTastyCoreOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyCoreOverflow\n--- PASS: TestTastyCoreOverflow (0.00s)\n"
+          },
+          {
+            "id": "precedence",
+            "test": "TestTastyPrecedence",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPrecedence\n--- PASS: TestTastyPrecedence (0.00s)\n"
+          },
+          {
+            "id": "build-metadata",
+            "test": "TestTastyBuildMetadata",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyBuildMetadata\n--- PASS: TestTastyBuildMetadata (0.00s)\n"
+          },
+          {
+            "id": "large-prerelease",
+            "test": "TestTastyLongPrereleaseNumbers",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongPrereleaseNumbers\n--- PASS: TestTastyLongPrereleaseNumbers (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/semver-library-api--without--2",
+      "artifact_sha256": {
+        "RESPONSE.txt": "3729bfb14054eda2941f1d14ebf94221549414eb84de622e00c84d5ce6c18834",
+        "go.mod": "5afc0980fd0fd599ac14bc37c2abb7d9a8aeb5a35d957b6ab419767f5c17aa58",
+        "semver.go": "1a48bd4031abba52b2dd1b38130eeb10a7d92be51e5322e205f0b5aaf804741e",
+        "semver_test.go": "4f94dc9ae73259c137dd3a487fce25b9f64041cb127ccf77fc40980405bf1c81"
+      }
+    },
+    {
+      "case": "semver-library-api",
+      "condition": "without",
+      "repetition": 3,
+      "started": "2026-10-31T11:33:27.017125+00:00",
+      "seconds": 67.86,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 101108,
+        "cached_input_tokens": 87040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4073,
+        "reasoning_output_tokens": 41
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "d16336ab20616bd4edcd0c2321e6e74e272423a2d5212a248db9626b7de4d36a",
+      "run_id": "semver-library-api--without--3",
+      "grade": {
+        "case": "semver-library-api",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "round-trip",
+            "test": "TestTastyRoundTrip",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyRoundTrip\n--- PASS: TestTastyRoundTrip (0.00s)\n"
+          },
+          {
+            "id": "invalid-input",
+            "test": "TestTastyInvalidInput",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyInvalidInput\n--- PASS: TestTastyInvalidInput (0.00s)\n"
+          },
+          {
+            "id": "core-overflow",
+            "test": "TestTastyCoreOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyCoreOverflow\n--- PASS: TestTastyCoreOverflow (0.00s)\n"
+          },
+          {
+            "id": "precedence",
+            "test": "TestTastyPrecedence",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPrecedence\n--- PASS: TestTastyPrecedence (0.00s)\n"
+          },
+          {
+            "id": "build-metadata",
+            "test": "TestTastyBuildMetadata",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyBuildMetadata\n--- PASS: TestTastyBuildMetadata (0.00s)\n"
+          },
+          {
+            "id": "large-prerelease",
+            "test": "TestTastyLongPrereleaseNumbers",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyLongPrereleaseNumbers\n--- PASS: TestTastyLongPrereleaseNumbers (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/semver-library-api--without--3",
+      "artifact_sha256": {
+        "RESPONSE.txt": "c35990b1b1ca01a10e2a9fd671604a9bf3f9459ef5072947d7549786ffee0da7",
+        "go.mod": "5afc0980fd0fd599ac14bc37c2abb7d9a8aeb5a35d957b6ab419767f5c17aa58",
+        "semver.go": "ae7d74fcbac62b84ea246332f8b92116328166b1808dd708d8bf91a777083de7",
+        "semver_test.go": "577ba557d7b194a06d94dde0bb7de747945f680a8c57ca04a5ec0aa7250b17a1"
+      }
+    }
+  ],
+  "totals": {
+    "with": {
+      "completed": 9,
+      "runner_errors": 0,
+      "passed": 57,
+      "checks": 57,
+      "builds_passed": 9,
+      "test_suites_passed": 9,
+      "input_tokens": 1368146,
+      "cached_input_tokens": 1184768,
+      "output_tokens": 31252,
+      "seconds": 654.2299999999999
+    },
+    "without": {
+      "completed": 9,
+      "runner_errors": 0,
+      "passed": 57,
+      "checks": 57,
+      "builds_passed": 9,
+      "test_suites_passed": 9,
+      "input_tokens": 1135012,
+      "cached_input_tokens": 984576,
+      "output_tokens": 32762,
+      "seconds": 638.76
+    }
+  }
+}

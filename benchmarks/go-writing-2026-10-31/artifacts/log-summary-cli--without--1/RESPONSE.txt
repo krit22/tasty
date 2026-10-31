@@ -1,0 +1,8 @@
+Implemented `logsum` with validation, deterministic sorting, 1 MiB record support, and continued processing after unreadable entries.
+
+Tests cover invalid records, empty directories, argument errors, large records, and unreadable entries. `go test ./...` and `go vet ./...` pass.
+
+Run with:
+```sh
+/tmp/tasty-toolchains/go1.27.3/go/bin/go run . DIRECTORY
+```

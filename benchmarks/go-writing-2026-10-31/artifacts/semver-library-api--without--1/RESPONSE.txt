@@ -1,0 +1,5 @@
+Implemented the dependency-free `semver` package with documented `Parse`, `String`, and `Compare` APIs.
+
+Supports strict SemVer validation, uint64 overflow rejection, arbitrarily long numeric prerelease identifiers, and comparison that ignores build metadata.
+
+Validation passed: unit tests, `go vet`, and a fuzz run with over 64,000 executions.

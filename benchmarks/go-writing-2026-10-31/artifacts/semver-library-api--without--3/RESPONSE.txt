@@ -1,0 +1,8 @@
+Implemented the dependency-free `semver` package with:
+
+- Strict parsing and uint64 core overflow rejection.
+- SemVer 2.0.0 precedence, including arbitrarily long numeric prerelease identifiers.
+- Preserved build metadata, excluded from comparison.
+- API documentation, examples, unit tests, and a fuzz target.
+
+Validation passed: `go test ./...` and `go vet ./...`.

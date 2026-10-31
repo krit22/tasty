@@ -1,0 +1,6 @@
+Completed the refactor, regression tests, and `CHANGES.md`.
+
+- Preserved exported APIs, Item fields, JSON shape, and valid-input behavior.
+- Reports sort by item name.
+- File, numeric, missing-item, and overflow failures return errors with sentinel compatibility.
+- `go test ./...` and `go vet ./...` passed using the provided Go toolchain and caches.

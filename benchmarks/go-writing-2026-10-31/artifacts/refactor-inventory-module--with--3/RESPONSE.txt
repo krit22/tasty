@@ -1,0 +1,8 @@
+Refactored the inventory package while preserving its API, JSON shape, and valid-input behavior.
+
+- Reports sort by item name.
+- File, numeric, missing-name, and overflow errors return to callers.
+- Sentinel errors remain compatible with `errors.Is`.
+- Added regression tests and `CHANGES.md`.
+
+Validation passed: `go test ./...` and `go vet ./...`.
