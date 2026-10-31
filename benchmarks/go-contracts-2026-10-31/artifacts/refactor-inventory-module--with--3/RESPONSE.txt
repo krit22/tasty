@@ -1,0 +1,8 @@
+Implemented the refactor with the public API and Item JSON shape preserved.
+
+- Reports sort by item name.
+- File and numeric errors return to callers.
+- Missing items return `ErrNotFound`; arithmetic overflow returns `ErrOverflow`.
+- Added regression tests and `CHANGES.md` documenting retained behavior.
+
+Validation passed: `go test ./...` and `go vet ./...`.

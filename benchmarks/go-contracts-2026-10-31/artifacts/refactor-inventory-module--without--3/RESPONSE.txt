@@ -1,0 +1,7 @@
+Refactored the package while preserving its public API and JSON shape.
+
+- Reports sort by item name.
+- File, numeric, missing-name, and overflow failures return errors with `errors.Is` compatibility.
+- Added regression tests and documented retained behavior in [CHANGES.md](CHANGES.md).
+
+Validation passed: `go test ./...` and `go vet ./...` using the provided toolchain and caches.

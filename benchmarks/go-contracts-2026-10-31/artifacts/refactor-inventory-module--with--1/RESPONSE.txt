@@ -1,0 +1,8 @@
+Refactored the package while preserving its public API and valid-input behavior.
+
+- Reports sort by item name.
+- File and numeric errors return to callers with context.
+- Missing names return `ErrNotFound`; arithmetic overflow returns `ErrOverflow`.
+- Added regression tests and documented retained behavior in [CHANGES.md](CHANGES.md).
+
+Validation passed: `go test ./...` and `go vet ./...`, using the supplied toolchain and caches.

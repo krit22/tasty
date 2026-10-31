@@ -89,8 +89,12 @@ A passing fixture suite validates the harness, not the effectiveness of the skil
 See [ROADMAP.md](ROADMAP.md) for the evidence gates and next experiments.
 
 Alpha 2 adds a narrow public-contract documentation rule in response to that observed
-gap. The [follow-up protocol](experiments/api-contracts.md) repeats the inventory case
-with unchanged task and rubrics. Its results will be reported separately from the baseline.
+gap. A [six-run follow-up](benchmarks/go-contracts-2026-10-31/README.md), using the same
+inventory task and rubrics, passed the documentation assertion in 3/3 skill runs and
+0/3 control runs. Both conditions passed all 21 behavior checks. Total qualitative
+scores were 9/9 with the skill and 6/9 without it. This is a targeted development-case
+improvement judged by one blinded model, not held-out evidence of generally better Go.
+The [protocol](experiments/api-contracts.md) and original negative result remain public.
 
 ## Reproduce the local checks
 

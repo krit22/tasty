@@ -1,0 +1,9 @@
+Completed the refactor while preserving exported APIs, Item JSON, and valid-input behavior.
+
+- Reports sort by item name.
+- File and numeric errors return to callers.
+- Missing items return ErrNotFound; arithmetic overflow returns ErrOverflow.
+- Sentinel errors remain compatible with errors.Is.
+- Added regression tests and CHANGES.md documenting retained behavior.
+
+Validation passed: `go test ./...` and `go vet ./...` using the supplied toolchain and caches.

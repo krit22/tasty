@@ -1,0 +1,618 @@
+{
+  "environment": {
+    "go": "go version go1.27.3 linux/amd64",
+    "agent": "codex-cli 0.163.0",
+    "model": "runner default; inspect events for any reported model identity",
+    "settings": "ignore-user-config; workspace-write; ephemeral; explicit skill loading",
+    "evaluates_discovery": false,
+    "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c"
+  },
+  "assessment": {
+    "go": "go version go1.27.3 linux/amd64",
+    "GOFLAGS": "-buildvcs=false",
+    "grader_sha256": "02b7ac951bb579d02d366ba63edc0252b8185bb4d1102d93d11f18268dcbec77",
+    "common_sha256": "b53b82ddbc2a08692a69d34c763d84765a94655cca5bdd9408ee6342a638e471",
+    "scope": "automated behavioral checks; qualitative rubrics ungraded"
+  },
+  "runs": [
+    {
+      "case": "refactor-inventory-module",
+      "condition": "with",
+      "repetition": 1,
+      "started": "2026-10-31T13:47:27.911023+00:00",
+      "seconds": 71.38,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 115526,
+        "cached_input_tokens": 103936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3415,
+        "reasoning_output_tokens": 10
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "a471dd8b71090a28820dd8ab14152a4b86b916a8a1599db4ef99b0f12cc08724",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/doc-comments.md": "d80eb4a772184e0a236360c50a8016c33196bd731d1f6b5e5453318fcc2bce38",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "5d20216a35d39d8956624aa61ed7ee71dfa185636cbed239daa41a282767f28e",
+      "run_id": "refactor-inventory-module--with--1",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--with--1",
+      "artifact_sha256": {
+        "CHANGES.md": "dedf723bc148346a767ac5ab1167846c9b9e41c23f8a10d5b139e4093c8b27ff",
+        "RESPONSE.txt": "0363f2650987ad26bb33e43b99113fc273ad006923fb55993f4eb02f5e2c8036",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "0acc655730278c95a4a9c81be4202f913eb4ad85837a062ed8fb2f785b83c14e",
+        "inventory_test.go": "b1be2630b49d4be53a5dfc8666a46498d8855483a647c834e0fa45b00900c34e"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "with",
+      "repetition": 2,
+      "started": "2026-10-31T13:45:57.945245+00:00",
+      "seconds": 88.84,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 160368,
+        "cached_input_tokens": 140800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3502,
+        "reasoning_output_tokens": 17
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "a471dd8b71090a28820dd8ab14152a4b86b916a8a1599db4ef99b0f12cc08724",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/doc-comments.md": "d80eb4a772184e0a236360c50a8016c33196bd731d1f6b5e5453318fcc2bce38",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "6433006f9d481d3c0173264be320b8126a2e0cb3dc9bfa6592038539e2193af0",
+      "run_id": "refactor-inventory-module--with--2",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--with--2",
+      "artifact_sha256": {
+        "CHANGES.md": "3f1dab27ec750c89dc7d7de58f33d854ad0ebd2f2173a538b321242c52445c9f",
+        "RESPONSE.txt": "984160e8ed0af4d54cddea7f477dbae3b019d6de14b09e52c50013e2e660bed8",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "78e93131f36be851e22ecf2b241dd4e3ec86b1b0f4ad856cc7befa76da667ec1",
+        "inventory_test.go": "9e558093b9b24d805a123176289b083ca5ed9054d406613edb82030dde80d57a"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "with",
+      "repetition": 3,
+      "started": "2026-10-31T13:45:57.941674+00:00",
+      "seconds": 84.97,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 163670,
+        "cached_input_tokens": 127616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3287,
+        "reasoning_output_tokens": 17
+      },
+      "skill_hashes": {
+        "skills/go-best-practices/SKILL.md": "a471dd8b71090a28820dd8ab14152a4b86b916a8a1599db4ef99b0f12cc08724",
+        "skills/go-best-practices/references/concurrency-http.md": "bb102837541b2209eadb451a7113b60996e036443879aa565b1bd951e7376875",
+        "skills/go-best-practices/references/doc-comments.md": "d80eb4a772184e0a236360c50a8016c33196bd731d1f6b5e5453318fcc2bce38",
+        "skills/go-best-practices/references/effective-go.md": "7da41d343e30411dbeeb937f646206ef27a15426cfbc7f9b58c7f4b80471cf48",
+        "skills/go-best-practices/references/go-code-review-comments.md": "af1a3c65c133f7699418e3354dac713012e64ff93776d7c80af3451a0433a1f5",
+        "skills/go-best-practices/references/go-testing.md": "c1990e914d1e640ffd67ed1d1e82699be89ced9c9eeb454706bc954747093941",
+        "skills/go-best-practices/references/google-go-style.md": "be2a68369107259d6576c50271afd473082e3bc9316ce388a2f47e0c23b27cbc",
+        "skills/go-best-practices/references/source-decisions.md": "08c63796d648a40c47b83e818ed7ca3af8e03f27a1a5aa7a59f89de1229955a2",
+        "skills/go-best-practices/references/stdlib-contracts.md": "416a9e60de5166a4be0693a2c27766592593d9e84d75d6b5c2c0ad18a8f3c52b",
+        "skills/go-best-practices/references/uber-go-style.md": "36f5d3818ea562db7cfe509d2347acc8321a06fe8580be267158a0d545bd590c"
+      },
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "664ed2bd09c96232c8077f62d5ba9f46f20bae03fd9f88cb1e0b4c61f17ef22d",
+      "run_id": "refactor-inventory-module--with--3",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--with--3",
+      "artifact_sha256": {
+        "CHANGES.md": "9e7bafd4050a1db014f6890781a00750f6d6d474103cdca46b3227c98809a093",
+        "RESPONSE.txt": "4ccc2433ea07e0ca86feaf16ea1dd8e168d31b4ab25af88a98c8bc65354595a6",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "b1a6703172f3654e781567e87a54c27d54494752ffb3629d979464e491add5f4",
+        "inventory_test.go": "e65a8fd2dcce47446782b65862a3f8884e6e90bcbb2d3bb0b8bc56e58df1a07f"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "without",
+      "repetition": 1,
+      "started": "2026-10-31T13:47:23.918017+00:00",
+      "seconds": 74.74,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 103630,
+        "cached_input_tokens": 84352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3241,
+        "reasoning_output_tokens": 59
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "8b597e85fcfb541c5dcbe47ee25fcc471757eaef16b18095b34fa23dbcb060fa",
+      "run_id": "refactor-inventory-module--without--1",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--without--1",
+      "artifact_sha256": {
+        "CHANGES.md": "f5e4ba24d28e4ca9a505296d44c1ecbf3516c8c3ab3603a110f048234b3725d9",
+        "RESPONSE.txt": "5bd69cfe70dcdedc8573425e8e7e52ffd7fa1c7f426db90d9801756483eb8ad0",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "fb2cf08345c6a8da3de12aaf85dd737fc199624d3f2db3628b110d517928a327",
+        "inventory_test.go": "ced3e5e9b28e8868c2c07525b083c25a8a62e66c57b732e67dd6c92bbe9a2217"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "without",
+      "repetition": 2,
+      "started": "2026-10-31T13:48:39.497086+00:00",
+      "seconds": 79.74,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 103240,
+        "cached_input_tokens": 94592,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3054,
+        "reasoning_output_tokens": 91
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "692082c0871073cac1c6bca549ac52eac14ad68b6ef8d7133000eb5102b56e89",
+      "run_id": "refactor-inventory-module--without--2",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--without--2",
+      "artifact_sha256": {
+        "CHANGES.md": "089416508b615f93503233fbedf598eeab51fa9ae0d42b8616e8cdbaf0e95c27",
+        "RESPONSE.txt": "d5cda24ed4fafe779be16d7ddc74aa0ab6cc6dba56f3cdaaecaadc6796d45f57",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "da67d5254156ff938cc9b3220e0ce837b30e3d7b1103973fe690758fc63775fc",
+        "inventory_test.go": "606b4b13516289161ca0cdfcbae29de26a85c8b86078afceacb788a22e660174"
+      }
+    },
+    {
+      "case": "refactor-inventory-module",
+      "condition": "without",
+      "repetition": 3,
+      "started": "2026-10-31T13:48:40.459277+00:00",
+      "seconds": 76.77,
+      "agent_exit_code": 0,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 103787,
+        "cached_input_tokens": 84224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3441,
+        "reasoning_output_tokens": 99
+      },
+      "skill_hashes": {},
+      "evaluation_lock_sha256": "040db5cdcb6906815585582a305d6de0a53d7246fb4c490608059306c787bc6c",
+      "generation_record_sha256": "d1e1818cb0b3160c8e200f63c45b99d240ab1dc5028d6732dfe7651b5cfc00a4",
+      "run_id": "refactor-inventory-module--without--3",
+      "grade": {
+        "case": "refactor-inventory-module",
+        "build": {
+          "passed": true,
+          "exit_code": 0,
+          "evidence": ""
+        },
+        "tests_exit_code": 0,
+        "checks": [
+          {
+            "id": "existing-api",
+            "test": "TestTastyExistingAPI",
+            "rule": "GO-API",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyExistingAPI\n--- PASS: TestTastyExistingAPI (0.00s)\n"
+          },
+          {
+            "id": "missing-name",
+            "test": "TestTastyMissingName",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyMissingName\n--- PASS: TestTastyMissingName (0.00s)\n"
+          },
+          {
+            "id": "file-error",
+            "test": "TestTastyFileError",
+            "rule": "GO-CAUSE",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyFileError\n--- PASS: TestTastyFileError (0.00s)\n"
+          },
+          {
+            "id": "numeric-error",
+            "test": "TestTastyNumericError",
+            "rule": "GO-ERROR",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyNumericError\n--- PASS: TestTastyNumericError (0.00s)\n"
+          },
+          {
+            "id": "overflow",
+            "test": "TestTastyOverflow",
+            "rule": "GO-NUMBERS",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyOverflow\n--- PASS: TestTastyOverflow (0.00s)\n"
+          },
+          {
+            "id": "report-order",
+            "test": "TestTastyDeterministicReport",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyDeterministicReport\n--- PASS: TestTastyDeterministicReport (0.00s)\n"
+          },
+          {
+            "id": "validation",
+            "test": "TestTastyPreservedValidation",
+            "rule": "GO-DATA-CONTRACT",
+            "passed": true,
+            "evidence": "=== RUN   TestTastyPreservedValidation\n--- PASS: TestTastyPreservedValidation (0.00s)\n"
+          }
+        ],
+        "manual": "ungraded",
+        "race_enabled": false
+      },
+      "artifacts": "artifacts/refactor-inventory-module--without--3",
+      "artifact_sha256": {
+        "CHANGES.md": "537110631d7bae725e8ca5aedc709faf083c34dc9136664915cb89662b502775",
+        "RESPONSE.txt": "8c0fac799cf49f4dc8c57a61f6285132bc571c023be8512cc97488ea84d05463",
+        "go.mod": "1c57ff5bbd9f04db0e3730a6b79d213488bf36b0ee4847356c81327e106a9d53",
+        "inventory.go": "cda2e940e84cf75ada915307f164a466f57a043d9d382628a648d00ab4bc3ba7",
+        "inventory_test.go": "16cd169e48f398a045256f947edc7f788eaf28e9fb8fb5ae056bb9c2c6e0b0cb"
+      }
+    }
+  ],
+  "totals": {
+    "with": {
+      "completed": 3,
+      "runner_errors": 0,
+      "passed": 21,
+      "checks": 21,
+      "builds_passed": 3,
+      "test_suites_passed": 3,
+      "input_tokens": 439564,
+      "cached_input_tokens": 372352,
+      "output_tokens": 10204,
+      "seconds": 245.19
+    },
+    "without": {
+      "completed": 3,
+      "runner_errors": 0,
+      "passed": 21,
+      "checks": 21,
+      "builds_passed": 3,
+      "test_suites_passed": 3,
+      "input_tokens": 310657,
+      "cached_input_tokens": 263168,
+      "output_tokens": 9736,
+      "seconds": 231.25
+    }
+  }
+}

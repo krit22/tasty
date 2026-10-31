@@ -1,0 +1,125 @@
+{
+  "grading_scope": "qualitative rubric review by one model; not behavioral scores",
+  "runs": [
+    {
+      "id": "run-01",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "run-01/candidate/inventory.go:17-20 defines Item with Name, Quantity, PriceCents and the corresponding name/quantity/price_cents JSON tags; inventory.go:25,27,38,43,59,78,116 supplies direct New/Add/Get/Restock/TotalValue/Load functions and the required Report(verbose bool). inventory.go:3-10 uses only standard-library imports, and go.mod:1-3 has no dependencies. No speculative interface, builder, or additional constructor appears. Internal representation is not scored. The original source is absent from the allowed artifacts, so exact baseline preservation cannot be independently verified."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "run-01/candidate/inventory_test.go:28 checks exact sorted report text in both verbose modes and for an empty inventory; :50 checks missing names, negative amounts, multiplication/sum/restock overflow, safe boundaries, and unchanged quantity after failure; :92 checks missing files and syntax/range errors with errors.Is and line context; :128 checks duplicate replacement, repeated-name totals, JSON shape, and validation. These exercise observable behavior rather than repeating constants. The supplied baseline is unavailable within the permitted review material, so weakening of original tests cannot be independently established."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "run-01/candidate/inventory.go:13,17,23,25,27,38,43,59,78,116 declares the exported sentinels, types, and functions without API documentation; the sole explanatory comment at :107 documents an unexported helper. Thus non-obvious public contracts such as Add replacement, repeated TotalValue names, Load parsing/error categories, and Report format are absent from exported API documentation. CHANGES.md:4-14 does describe the requested fixes and retained compatibility, and RESPONSE.txt:7 states go test ./... and go vet ./... passed, but that does not satisfy the missing API-documentation part; execution of the reported checks is not independently audited."
+        }
+      ]
+    },
+    {
+      "id": "run-02",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "run-02/candidate/inventory.go:23-26 defines Item's Name/Quantity/PriceCents fields and JSON tags; inventory.go:34,37,49,56,74,96,126 provides the direct Inventory API, including the required Report(verbose bool). inventory.go:3-10 uses only standard-library imports, and go.mod:1-3 has no dependencies. No speculative interface, builder, or additional constructor appears. Internal representation is not scored. The original source is absent from the allowed artifacts, so exact baseline preservation cannot be independently verified."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "run-02/candidate/inventory_test.go:27 checks sorted report formatting, replacement, zero-value use, duplicate-name totals, and JSON shape; :55 exercises overflow and safe int64 boundaries, missing-name/negative-amount precedence, and unchanged state after rejected restocks; :108 checks missing files, malformed rows, both numeric fields' syntax/range failures, no partial inventory, and successful trimmed/duplicate rows. These are substantive behavior checks. Original supplied tests are not separately present in the allowed material, so absence of weakening cannot be independently audited."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "run-02/candidate/inventory.go:13-20 documents sentinels; :29-30 explains zero-value usability and synchronization; :36 documents replacement, :54-55 restock precedence and failure atomicity, :72-73 repeated names and failed totals, :93-95 loading/duplicates/wrapped causes/no partial result, and :125 sorted verbose reports. CHANGES.md:3-9 identifies requested fixes and deliberately retained compatibility. RESPONSE.txt:8 states go test ./... and go vet ./... passed; only the presence of that statement is established, not actual execution. The Load phrase 'invalid rows' at inventory.go:95 is broad, but its separate numeric-cause wording and CHANGES.md:9 clarify parsing errors versus arithmetic ErrOverflow."
+        }
+      ]
+    },
+    {
+      "id": "run-03",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "run-03/candidate/inventory.go:19-22 defines Item's Name/Quantity/PriceCents fields and JSON tags; inventory.go:27,29,40,45,61,80,109 provides the direct Inventory API and the required Report(verbose bool). inventory.go:3-10 uses only standard-library imports, and go.mod:1-3 has no dependencies. No speculative interface, builder, or additional constructor appears. Internal representation is not scored. The original source is absent from the allowed artifacts, so exact baseline preservation cannot be independently verified."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "run-03/candidate/inventory_test.go:28 checks input validation, replacement, missing lookup, repeated-name/empty totals and missing-name precedence; :64 checks safe/overflow boundaries, rejected-restock state, multiplication and accumulation; :108 checks file errors, invalid rows, both numeric fields' syntax/range causes, line context, no partial result and successful trimmed/duplicate rows; :150 checks repeated exact sorted reports in both modes and JSON shape. These are observable regression checks, not constant duplication. The original test baseline is absent from the permitted material, preventing an independent audit for weakening."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "run-03/candidate/inventory.go:13-29 declares exported errors, types, New and Add without API comments, and :40,45,61,80,109 likewise has no documentation for Get, Restock, TotalValue, Load or Report. Thus public non-obvious behavior/error contracts are undocumented at the API despite CHANGES.md:3-17 explaining fixes and :19-32 explaining retained behavior. RESPONSE.txt:7 states go test ./... and go vet ./... passed, but that statement does not remedy the absent API documentation and was not independently verified as executed."
+        }
+      ]
+    },
+    {
+      "id": "run-04",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "run-04/candidate/inventory.go:23-26 defines Item's Name/Quantity/PriceCents fields and JSON tags; inventory.go:34,37,49,56,75,97,128 provides the direct Inventory API and the required Report(verbose bool). inventory.go:3-10 imports only the standard library, and go.mod:1-3 has no dependencies. No speculative interface, builder, or additional constructor appears. Internal representation is not scored. The original source is absent from the allowed artifacts, so exact baseline preservation cannot be independently verified."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "run-04/candidate/inventory_test.go:28 checks exact sorted/verbose reports, replacement, zero-value use, repeated/empty totals and JSON; :69 checks invalid inputs, missing-name precedence, arithmetic boundaries, overflow and unchanged restock state; :120 checks missing files, malformed/negative rows, both fields' syntax/range errors, wrapped causes and path/line context, plus valid trimming, signed values, duplicate rows and zero values. These exercise promised outcomes. The original supplied-test baseline is unavailable within the allowed review material, so weakening cannot be independently ruled out."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "run-04/candidate/inventory.go:13-20 explains sentinels; :29-30 documents zero-value and concurrency expectations; :36 states Add replacement/validation, :54-55 restock errors and no mutation on overflow, :72-74 repeated-name totals/error categories/zero on error, :94-96 Load format and wrapped causes, and :126-127 report ordering/newlines/verbosity. CHANGES.md:3-7 calls out requested behavior fixes and :9-13 explicitly records retained compatibility. RESPONSE.txt:8 states go test ./... and go vet ./... passed; the commands' execution is reported but not independently audited here."
+        }
+      ]
+    },
+    {
+      "id": "run-05",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "run-05/candidate/inventory.go:17-20 defines Item's Name/Quantity/PriceCents fields and JSON tags; inventory.go:25,27,38,43,59,78,107 provides the direct Inventory API, including the required Report(verbose bool). inventory.go:3-10 uses only standard-library imports, and go.mod:1-3 has no dependencies. No speculative interface, builder, or additional constructor appears. Internal representation is not scored. The original source is absent from the allowed artifacts, so exact baseline preservation cannot be independently verified."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "run-05/candidate/inventory_test.go:28 checks overflow without restock mutation; :45 covers missing names, product/sum overflow, maximum/zero boundaries, duplicate and empty totals; :75 checks file errors, row validation, numeric syntax/range causes and line context with no partial result; :105 checks loading, replacement, repeated sorted reports in both modes and JSON; :132 checks invalid fields, zero-value use, missing-name precedence and replacement. These are outcome-based regression tests. Original supplied tests are unavailable in the allowed material, so potential weakening cannot be independently audited."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": false,
+          "evidence": "run-05/candidate/inventory.go:13-27 declares exported errors, types, New and Add without documentation; :38,43,59,78,107 likewise supplies no API comments for lookup, restocking, totals, loading or reporting. Non-obvious behavior/error contracts consequently remain absent from exported API documentation. CHANGES.md:3-8 identifies requested fixes and :10-14 documents retained compatibility, and RESPONSE.txt:8 states go test ./... and go vet ./... pass, but those satisfy only the other parts of this rubric. Actual execution of those checks is not audited here."
+        }
+      ]
+    },
+    {
+      "id": "run-06",
+      "results": [
+        {
+          "rubric": "01-appropriate-api",
+          "passed": true,
+          "evidence": "run-06/candidate/inventory.go:23-26 defines Item's Name/Quantity/PriceCents fields and JSON tags; inventory.go:34,37,49,56,74,96,126 provides the direct Inventory API and the required Report(verbose bool). inventory.go:3-10 uses only standard-library imports, and go.mod:1-3 has no dependencies. No speculative interface, builder, or additional constructor appears. Internal representation is not scored. The original source is absent from the allowed artifacts, so exact baseline preservation cannot be independently verified."
+        },
+        {
+          "rubric": "02-meaningful-tests",
+          "passed": true,
+          "evidence": "run-06/candidate/inventory_test.go:27 checks exact sorted reports in both modes, replacement, zero-value use, repeated/empty totals and JSON shape; :60 checks validation, missing names and negative-amount precedence; :84 checks multiplication/sum/restock overflow, safe/zero boundaries and unchanged restock state; :124 checks missing files, invalid rows, numeric syntax/range causes, no partial inventory and trimmed duplicate rows. These test observable promised behavior. The original supplied tests are unavailable within the permitted material, so possible weakening cannot be independently audited."
+        },
+        {
+          "rubric": "03-clear-contracts",
+          "passed": true,
+          "evidence": "run-06/candidate/inventory.go:13-20 documents sentinels; :29-30 explains zero-value/concurrency expectations; :36 states replacement/validation, :54-55 lists restock errors/no mutation, :72-73 explains repeated names and zero totals on failure, :93-95 describes Load trimming/duplicates/wrapped causes, and :125 describes sorted verbose reports. CHANGES.md:3-7 identifies requested fixes and :9-13 explicitly explains retained compatibility. RESPONSE.txt:9 states go test ./... and go vet ./... passed; actual execution is not independently audited. The general phrase 'invalid records' at inventory.go:95 is somewhat broad, but the separate numeric-cause wording and CHANGES.md:13 identify retained strconv causes."
+        }
+      ]
+    }
+  ]
+}

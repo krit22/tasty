@@ -1,3 +1,5 @@
+This forward test used the alpha-1 skill before the documentation revision.
+
 Independent forward test of `skills/go-best-practices/SKILL.md`.
 
 Artifact directory: `examples/forward-options`.

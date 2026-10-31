@@ -1,0 +1,8 @@
+Refactored the package while preserving its exported API, Item fields, and JSON shape.
+
+- Reports sort by item name.
+- File and numeric errors return with context.
+- Missing names return `ErrNotFound`; arithmetic overflow returns `ErrOverflow`.
+- Added regression tests and `CHANGES.md` documenting changes and retained behavior.
+
+`go test ./...` and `go vet ./...` pass using the provided Go toolchain and caches.

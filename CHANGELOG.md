@@ -7,6 +7,9 @@
   comments in all six inventory refactors, with and without the original skill.
 - Repeat the frozen inventory task and rubric as a separate six-run experiment.
   The original baseline and its negative result remain unchanged.
+- In that follow-up, the blinded documentation assertion passed in 3/3 skill runs
+  and 0/3 controls. Behavior passed 21/21 in each condition. This is an in-sample
+  development result, not a general improvement claim.
 
 ## 0.1.0-alpha.1 — 2026-10-31
 
