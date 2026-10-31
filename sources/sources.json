@@ -131,5 +131,12 @@
     "sections": "Items 2, 9, 10, 11",
     "reviewed": "2026-10-31",
     "context": "Evaluation contract; uint64 core bounds are task-specific"
+  },
+  {
+    "id": "doc-comments",
+    "url": "https://go.dev/doc/comment",
+    "sections": "Funcs; Types; doc comments beside declarations",
+    "reviewed": "2026-10-31",
+    "context": "Document observable contracts for affected APIs; avoid unrelated boilerplate"
   }
 ]

@@ -169,5 +169,17 @@
       "behavior-tests",
       "rubric"
     ]
+  },
+  {
+    "id": "GO-DOCS",
+    "sources": [
+      "doc-comments"
+    ],
+    "reason": "Keep changed public contracts discoverable to callers",
+    "exceptions": "Document affected APIs and non-obvious behavior; avoid unrelated boilerplate cleanup",
+    "verification": [
+      "rubric",
+      "doc-comment-review"
+    ]
   }
 ]

@@ -102,6 +102,15 @@ and a long-running service have different needs. Preserve the user's requested s
 - When parsing external data, distinguish syntax from validation. Preserve unknown-field,
   whitespace, trailing-data, and size-limit behavior unless a change is requested.
 
+## Keep public contracts discoverable
+
+- **GO-DOCS:** When writing or changing an exported API, document its contract next
+  to the declaration. Explain non-obvious results, errors callers can inspect, side
+  effects, ordering, and ownership where relevant. During a refactor that changes
+  failure behavior, update the affected API comments as well as the change notes.
+  Describe what callers can rely on, not internal algorithms. Avoid boilerplate that
+  merely repeats a name. See [Go doc comments](references/doc-comments.md).
+
 ## Test the behavior, then verify
 
 - **GO-TEST:** Test the public behavior and failure paths: malformed input, missing
@@ -123,6 +132,7 @@ and a long-running service have different needs. Preserve the user's requested s
 ## Before returning a change
 
 Confirm that the requested behavior works, failures retain useful information,
-resources have owners, concurrency has a termination story, and API changes are
+resources have owners, concurrency has a termination story, and affected public
+contracts are documented alongside their declarations. API changes should be
 explicit. Keep explanations proportional to the task. Skip extra architecture and
 documentation that do not help the user understand or use the change.

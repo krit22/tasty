@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 — 2026-10-31
+
+- Add focused Go doc-comment guidance for affected public API contracts, sourced from
+  the Go project's documentation. The first blinded review found missing contract
+  comments in all six inventory refactors, with and without the original skill.
+- Repeat the frozen inventory task and rubric as a separate six-run experiment.
+  The original baseline and its negative result remain unchanged.
+
 ## 0.1.0-alpha.1 — 2026-10-31
 
 - First Go writing/refactoring skill with source-linked, contextual guidance.

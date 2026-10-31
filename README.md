@@ -88,6 +88,10 @@ in every inventory refactor.
 A passing fixture suite validates the harness, not the effectiveness of the skill.
 See [ROADMAP.md](ROADMAP.md) for the evidence gates and next experiments.
 
+Alpha 2 adds a narrow public-contract documentation rule in response to that observed
+gap. The [follow-up protocol](experiments/api-contracts.md) repeats the inventory case
+with unchanged task and rubrics. Its results will be reported separately from the baseline.
+
 ## Reproduce the local checks
 
 Use Python 3.10+ and Go 1.26 or later. CI checks the documented examples and contracts
